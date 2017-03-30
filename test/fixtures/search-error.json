@@ -1,0 +1,17 @@
+{
+	"error": {
+		"root_cause": [
+			{
+				"type": "parsing_exception",
+				"reason": "no [query] registered for [tersm]",
+				"line": 8,
+				"col": 28
+			}
+		],
+		"type": "parsing_exception",
+		"reason": "no [query] registered for [tersm]",
+		"line": 8,
+		"col": 28
+	},
+	"status": 400
+}
