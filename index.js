@@ -1,3 +1,4 @@
 module.exports = {
-	search: require('./lib/search')
+	search: require('./lib/search'),
+	get: require('./lib/get')
 };

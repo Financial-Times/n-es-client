@@ -13,7 +13,7 @@ describe('Search', () => {
 		nock.cleanAll();
 	});
 
-	context('Params', () => {
+	context('With options', () => {
 		it('accepts pagination parameters', () => {
 			const from = 10;
 			const size = 20;
@@ -25,6 +25,18 @@ describe('Search', () => {
 				.reply(200, fixtureWithResults);
 
 			return subject({ from, size });
+		});
+
+		it('accepts a source parameter', () => {
+			const source = 'id,title';
+
+			const req = nock('https://next-elastic.ft.com')
+				.post('/content/item/_search', (body) => {
+					return body._source === source;
+				})
+				.reply(200, fixtureWithResults);
+
+			return subject({ _source: source });
 		});
 	});
 
