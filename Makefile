@@ -7,3 +7,12 @@ unit-test:
 
 test:
 	make verify
+
+coverage:
+	istanbul cover node_modules/.bin/_mocha --report lcovonly 'test/**/*.test.js'
+
+ifeq ($(CIRCLE_BRANCH),master)
+	make coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+else
+	make unit-test
+endif
