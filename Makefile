@@ -8,11 +8,11 @@ unit-test:
 test:
 	make verify
 
-coverage:
-	istanbul cover node_modules/.bin/_mocha --report lcovonly 'test/spec/**/*-spec.js'
-
 ifeq ($(CIRCLECI),true)
 	make coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
 else
 	make unit-test
 endif
+
+coverage:
+	istanbul cover node_modules/.bin/_mocha --report lcovonly 'test/spec/**/*-spec.js'
