@@ -18,7 +18,7 @@ describe('Search', () => {
 			const from = 10;
 			const size = 20;
 
-			const req = nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.ft.com')
 				.post('/content/item/_search', (body) => {
 					return body.from === from && body.size === size;
 				})
@@ -30,7 +30,7 @@ describe('Search', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			const req = nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.ft.com')
 				.post('/content/item/_search', (body) => {
 					return body._source === source;
 				})

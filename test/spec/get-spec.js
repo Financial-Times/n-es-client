@@ -15,7 +15,7 @@ describe('Get', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			const req = nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.ft.com')
 				.get(`/content/item/${fixture.id}/_source`)
 				.query((params) => {
 					return params._source === source;
