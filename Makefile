@@ -9,9 +9,9 @@ test:
 	make verify
 
 coverage:
-	istanbul cover node_modules/.bin/_mocha --report lcovonly 'test/**/*.test.js'
+	istanbul cover node_modules/.bin/_mocha --report lcovonly 'test/spec/**/*-spec.js'
 
-ifeq ($(CIRCLE_BRANCH),master)
+ifeq ($(CIRCLECI),true)
 	make coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
 else
 	make unit-test
