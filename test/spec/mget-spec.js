@@ -1,37 +1,35 @@
 const { expect } = require('chai');
 const nock = require('nock');
 
-const subject = require('../../lib/search');
+const subject = require('../../lib/mget');
 
-const fixtureWithResults = require('../fixtures/search-with-results.json');
-const fixtureNoResults = require('../fixtures/search-no-results.json');
-const fixtureError = require('../fixtures/search-error.json');
+const fixtureWithResults = require('../fixtures/mget-with-results.json');
+const fixtureNoResults = require('../fixtures/mget-no-results.json');
 
-describe('Search', () => {
+describe('Multi get', () => {
 	afterEach(() => {
 		nock.isDone();
 		nock.cleanAll();
 	});
 
 	context('With options', () => {
-		it('accepts pagination parameters', () => {
-			const from = 10;
-			const size = 20;
+		it('accepts an IDs parameter', () => {
+			const ids = [123, 456, 789];
 
 			const req = nock('https://next-elastic.ft.com')
-				.post('/content/item/_search', (body) => {
-					return body.from === from && body.size === size;
+				.post('/content/item/_mget', (body) => {
+					return body.ids.every((id, i) => id === ids[i]);
 				})
 				.reply(200, fixtureWithResults);
 
-			return subject({ from, size });
+			return subject({ ids });
 		});
 
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
 			const req = nock('https://next-elastic.ft.com')
-				.post('/content/item/_search', (body) => {
+				.post('/content/item/_mget', (body) => {
 					return body._source === source;
 				})
 				.reply(200, fixtureWithResults);
@@ -43,40 +41,14 @@ describe('Search', () => {
 	context('Response - with results', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/content/item/_search')
+				.post('/content/item/_mget')
 				.reply(200, fixtureWithResults);
 		});
 
 		it('returns an array', () => (
 			subject().then((result) => {
 				expect(result).to.be.an('array');
-				expect(result.length).to.equal(fixtureWithResults.hits.hits.length);
-			})
-		));
-
-		it('returns the total', () => (
-			subject().then((result) => {
-				expect(result.total).to.equal(fixtureWithResults.hits.total);
-			})
-		));
-	});
-
-	context('Response - no results', () => {
-		beforeEach(() => {
-			nock('https://next-elastic.ft.com')
-				.post('/content/item/_search')
-				.reply(200, fixtureNoResults);
-		});
-
-		it('returns an array', () => (
-			subject().then((result) => {
-				expect(result).to.be.an('array');
-			})
-		));
-
-		it('appends the total', () => (
-			subject().then((result) => {
-				expect(result.total).to.equal(0);
+				expect(result.length).to.equal(fixtureWithResults.docs.length);
 			})
 		));
 
@@ -89,11 +61,31 @@ describe('Search', () => {
 		));
 	});
 
+	context('Response - no results', () => {
+		beforeEach(() => {
+			nock('https://next-elastic.ft.com')
+				.post('/content/item/_mget')
+				.reply(200, fixtureNoResults);
+		});
+
+		it('returns an array', () => (
+			subject().then((result) => {
+				expect(result).to.be.an('array');
+			})
+		));
+
+		it('filters out not found documents', () => {
+			subject().then((result) => {
+				expect(result.length).to.equal(0);
+			})
+		})
+	});
+
 	context('Response - error', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/content/item/_search')
-				.reply(400, fixtureError);
+				.post('/content/item/_mget')
+				.reply(500);
 		});
 
 		it('throws an HTTP error', () => (
@@ -103,7 +95,7 @@ describe('Search', () => {
 				})
 				.catch((error) => {
 					expect(error).to.be.an('error');
-					expect(error.name).to.equal('BadRequestError');
+					expect(error.name).to.equal('InternalServerError');
 				})
 		));
 	});
