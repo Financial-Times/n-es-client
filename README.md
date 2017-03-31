@@ -1,6 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/Financial-Times/n-es-client/badge.svg?branch=master)](https://coveralls.io/github/Financial-Times/n-es-client?branch=master)
-
-# n-es-client
+# n-es-client [![CircleCI](https://circleci.com/gh/Financial-Times/n-es-client.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-es-client) [![Coverage Status](https://coveralls.io/repos/github/Financial-Times/n-es-client/badge.svg?branch=master)](https://coveralls.io/github/Financial-Times/n-es-client?branch=master)
 
 A very thin wrapper around [signed fetch][1] and [http-errors][2] to search and retrieve content from our Elasticsearch clusters in a simple manner.
 
