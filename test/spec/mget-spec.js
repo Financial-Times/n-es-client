@@ -16,7 +16,7 @@ describe('Multi get', () => {
 		it('accepts an IDs parameter', () => {
 			const ids = [123, 456, 789];
 
-			const req = nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.ft.com')
 				.post('/content/item/_mget', (body) => {
 					return body.ids.every((id, i) => id === ids[i]);
 				})
@@ -28,7 +28,7 @@ describe('Multi get', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			const req = nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.ft.com')
 				.post('/content/item/_mget', (body) => {
 					return body._source === source;
 				})
