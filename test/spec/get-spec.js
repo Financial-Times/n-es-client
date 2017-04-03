@@ -13,16 +13,14 @@ describe('Get', () => {
 
 	context('With options', () => {
 		it('accepts a source parameter', () => {
-			const source = 'id,title';
-
 			nock('https://next-elastic.ft.com')
 				.get(`/content/item/${fixture.id}/_source`)
 				.query((params) => {
-					return params._source === source;
+					return params._source === 'id,title';
 				})
 				.reply(200, fixture);
 
-			return subject(fixture.id, { _source: source });
+			return subject(fixture.id, { _source: ['id', 'title'] });
 		});
 	});
 
