@@ -1,8 +1,7 @@
 /node*
-/public/
 *.env*
-/.haikro-cache
 .eslintrc.js
 .editorconfig
 /.idea
 /coverage
+/.nyc_output/
