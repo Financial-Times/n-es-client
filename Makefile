@@ -16,3 +16,6 @@ ifeq ($(CIRCLECI),true)
 else
 	make unit-test
 endif
+
+install-hooks:
+	cp -rf git-hooks/ .git/hooks/
