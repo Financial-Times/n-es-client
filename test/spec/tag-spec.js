@@ -24,15 +24,21 @@ describe('Tag', () => {
 		it('returns an object', () => (
 			subject(id).then((result) => {
 				expect(result).to.be.an('object');
-				expect(result).to.include.keys('idV1', 'prefLabel', 'taxonomy');
 			})
 		));
 
-		it('plucks out the requested tag', () => {
+		it('finds the requested tag', () => {
 			subject(id).then((result) => {
 				expect(result.idV1).to.equal(id);
 			})
 		});
+
+		it('plucks out the necessary keys', () => (
+			subject(id).then((result) => {
+				expect(result).to.include.keys('idV1', 'prefLabel', 'taxonomy', 'attributes', 'url');
+				expect(result).to.not.include.keys('primaryTag', 'teaserTag', 'primary');
+			})
+		));
 	});
 
 	context('Response - not found', () => {
