@@ -1,0 +1,77 @@
+{
+	"took": 4,
+	"timed_out": false,
+	"_shards": {
+		"total": 1,
+		"successful": 1,
+		"failed": 0
+	},
+	"hits": {
+		"total": 26082,
+		"max_score": 1,
+		"hits": [
+			{
+				"_index": "v3_api_v2-2016-12-20",
+				"_type": "item",
+				"_id": "07004678-4661-3417-bd5f-3b5f1e673773",
+				"_score": 1,
+				"_source": {
+					"metadata": [
+						{
+							"idV1": "NTM=-U2VjdGlvbnM=",
+							"prefLabel": "Technology",
+							"attributes": [],
+							"primaryTag": true,
+							"taxonomy": "sections",
+							"teaserTag": true,
+							"url": "https://www.ft.com/companies/technology",
+							"primary": "section"
+						},
+						{
+							"idV1": "OA==-R2VucmVz",
+							"prefLabel": "Comment",
+							"attributes": [],
+							"taxonomy": "genre",
+							"url": "https://www.ft.com/stream/genreId/OA==-R2VucmVz"
+						},
+						{
+							"idV1": "MDEwMzFmMmUtYThkNy00ZWJmLWEzOTYtOWM2OWQ3YzA0ZGE1-T04=",
+							"prefLabel": "Financial Times",
+							"attributes": [
+								{
+									"value": "true",
+									"key": "is_company"
+								}
+							],
+							"taxonomy": "organisations",
+							"url": "https://www.ft.com/stream/organisationsId/MDEwMzFmMmUtYThkNy00ZWJmLWEzOTYtOWM2OWQ3YzA0ZGE1-T04="
+						},
+						{
+							"idV1": "TnN0ZWluX09OX0FGVE1fT05fMzI5M19NU0w=-T04=",
+							"prefLabel": "Lehman Brothers Holdings",
+							"attributes": [
+								{
+									"value": "us:LEHMQ",
+									"key": "wsod_key"
+								},
+								{
+									"value": "true",
+									"key": "is_company"
+								}
+							],
+							"taxonomy": "organisations",
+							"url": "https://www.ft.com/topics/organisations/Lehman_Brothers_Holdings_Inc"
+						},
+						{
+							"idV1": "Mjk=-U2VjdGlvbnM=",
+							"prefLabel": "Companies",
+							"attributes": [],
+							"taxonomy": "sections",
+							"url": "https://www.ft.com/companies"
+						}
+					]
+				}
+			}
+		]
+	}
+}

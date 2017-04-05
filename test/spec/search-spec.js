@@ -59,6 +59,14 @@ describe('Search', () => {
 				expect(result.total).to.equal(fixtureWithResults.hits.total);
 			})
 		));
+
+		it('returns the document source', () => (
+			subject().then((result) => {
+				result.forEach((doc) => {
+					expect(doc).to.include.keys('id', 'title');
+				});
+			})
+		));
 	});
 
 	context('Response - no results', () => {
@@ -77,14 +85,6 @@ describe('Search', () => {
 		it('appends the total', () => (
 			subject().then((result) => {
 				expect(result.total).to.equal(0);
-			})
-		));
-
-		it('returns the document source', () => (
-			subject().then((result) => {
-				result.forEach((doc) => {
-					expect(doc).to.include.keys('id', 'title');
-				});
 			})
 		));
 	});
