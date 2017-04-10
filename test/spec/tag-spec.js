@@ -27,15 +27,15 @@ describe('Tag', () => {
 			})
 		));
 
-		it('finds the requested tag', () => {
+		it('finds the requested tag', () => (
 			subject(id).then((result) => {
-				expect(result.idV1).to.equal(id);
+				expect(result.id).to.equal(id);
 			})
-		});
+		));
 
 		it('plucks out the necessary keys', () => (
 			subject(id).then((result) => {
-				expect(result).to.include.keys('idV1', 'prefLabel', 'taxonomy', 'attributes', 'url');
+				expect(result).to.include.keys('id', 'name', 'taxonomy', 'attributes', 'url');
 				expect(result).to.not.include.keys('primaryTag', 'teaserTag', 'primary');
 			})
 		));
