@@ -2,6 +2,11 @@
   "name": "@financial-times/n-es-client",
   "version": "0.0.0",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Financial-Times/n-es-client.git"
+  },
+  "homepage": "https://github.com/Financial-Times/n-es-client",
   "dependencies": {
     "@financial-times/n-logger": "^5.5.3",
     "http-errors": "^1.6.1",
