@@ -1,0 +1,128 @@
+{
+	"took": 4,
+	"timed_out": false,
+	"_shards": {
+		"total": 1,
+		"successful": 1,
+		"failed": 0
+	},
+	"hits": {
+		"total": 26082,
+		"max_score": 1,
+		"hits": [
+			{
+				"_index": "v3_api_v2-2016-12-20",
+				"_type": "item",
+				"_id": "07004678-4661-3417-bd5f-3b5f1e673773",
+				"_score": 1,
+				"_source": {
+					"annotations": [
+						{
+							"predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
+							"id": "164d0c3b-8a5a-4163-9519-96b57ed159bf",
+							"apiUrl": "http://api.ft.com/brands/164d0c3b-8a5a-4163-9519-96b57ed159bf",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/classification/Classification",
+								"http://www.ft.com/ontology/product/Brand"
+							],
+							"prefLabel": "Tech blog",
+							"type": "BRAND",
+							"directType": "http://www.ft.com/ontology/product/Brand",
+							"url": "https://www.ft.com/stream/164d0c3b-8a5a-4163-9519-96b57ed159bf"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/annotation/majorMentions",
+							"id": "73cc33b5-d0cb-3815-8347-bc49e1ddbd5c",
+							"apiUrl": "http://api.ft.com/organisations/73cc33b5-d0cb-3815-8347-bc49e1ddbd5c",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/organisation/Organisation"
+							],
+							"prefLabel": "The Financial Times Ltd.",
+							"type": "ORGANISATION",
+							"directType": "http://www.ft.com/ontology/organisation/Organisation",
+							"url": "https://www.ft.com/stream/73cc33b5-d0cb-3815-8347-bc49e1ddbd5c"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
+							"id": "852939c8-859c-361e-8514-f82f6c041580",
+							"apiUrl": "http://api.ft.com/things/852939c8-859c-361e-8514-f82f6c041580",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/classification/Classification",
+								"http://www.ft.com/ontology/Section"
+							],
+							"prefLabel": "Companies",
+							"type": "SECTION",
+							"directType": "http://www.ft.com/ontology/Section",
+							"url": "https://www.ft.com/stream/852939c8-859c-361e-8514-f82f6c041580"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
+							"id": "c00970ee-bded-3841-97e4-b1c079835c77",
+							"apiUrl": "http://api.ft.com/brands/c00970ee-bded-3841-97e4-b1c079835c77",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/classification/Classification",
+								"http://www.ft.com/ontology/product/Brand"
+							],
+							"prefLabel": "FT Tech Hub",
+							"type": "BRAND",
+							"directType": "http://www.ft.com/ontology/product/Brand",
+							"url": "https://www.ft.com/stream/c00970ee-bded-3841-97e4-b1c079835c77"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
+							"id": "e569e23b-0c3e-3d20-8ed0-4c17b8177c05",
+							"apiUrl": "http://api.ft.com/things/e569e23b-0c3e-3d20-8ed0-4c17b8177c05",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/classification/Classification",
+								"http://www.ft.com/ontology/Genre"
+							],
+							"prefLabel": "Comment",
+							"type": "GENRE",
+							"directType": "http://www.ft.com/ontology/Genre",
+							"url": "https://www.ft.com/stream/e569e23b-0c3e-3d20-8ed0-4c17b8177c05"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/classification/isPrimarilyClassifiedBy",
+							"id": "2dd66dcb-b87d-35ef-b1bf-ce8706f2c382",
+							"apiUrl": "http://api.ft.com/things/2dd66dcb-b87d-35ef-b1bf-ce8706f2c382",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/classification/Classification",
+								"http://www.ft.com/ontology/Section"
+							],
+							"prefLabel": "Technology",
+							"type": "SECTION",
+							"directType": "http://www.ft.com/ontology/Section",
+							"url": "https://www.ft.com/stream/2dd66dcb-b87d-35ef-b1bf-ce8706f2c382"
+						},
+						{
+							"predicate": "http://www.ft.com/ontology/annotation/majorMentions",
+							"id": "8adbcda9-17d6-3c7e-9a20-8615a7c6051f",
+							"apiUrl": "http://api.ft.com/organisations/8adbcda9-17d6-3c7e-9a20-8615a7c6051f",
+							"types": [
+								"http://www.ft.com/ontology/core/Thing",
+								"http://www.ft.com/ontology/concept/Concept",
+								"http://www.ft.com/ontology/organisation/Organisation"
+							],
+							"prefLabel": "Lehman Brothers Holdings, Inc.",
+							"type": "ORGANISATION",
+							"directType": "http://www.ft.com/ontology/organisation/Organisation",
+							"url": "https://www.ft.com/stream/8adbcda9-17d6-3c7e-9a20-8615a7c6051f"
+						}
+					]
+				}
+			}
+		]
+	}
+}

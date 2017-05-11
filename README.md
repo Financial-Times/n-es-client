@@ -64,6 +64,10 @@ es.search({
 
 Get a single TME tag by UUID. Returns an object or `undefined` if no matches were found.
 
+### `.concept(uuid[, timeout])`
+
+Get a single concept annotation by UUID. Returns an object or `undefined` if no matches were found.
+
 [1]: https://github.com/matthew-andrews/signed-aws-es-fetch
 [2]: https://www.npmjs.com/package/http-errors
 [3]: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-source-filtering.html
