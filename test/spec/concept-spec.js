@@ -35,7 +35,13 @@ describe('Concept', () => {
 
 		it('plucks out the necessary keys', () => (
 			subject(id).then((result) => {
-				expect(result).to.include.keys('id', 'prefLabel', 'apiUrl', 'attributes', 'url', 'types', 'type', 'directType');
+				// existing keys
+				expect(result).to.include.keys('id', 'prefLabel', 'apiUrl', 'url', 'types', 'type', 'directType');
+
+				// non existing keys
+				expect(result).to.not.include.keys('attributes');
+
+				// stripped out keys
 				expect(result).to.not.include.keys('predicate');
 			})
 		));
