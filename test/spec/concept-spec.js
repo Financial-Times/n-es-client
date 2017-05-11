@@ -32,6 +32,13 @@ describe('Concept', () => {
 				expect(result.id).to.equal(id);
 			})
 		));
+
+		it('plucks out the necessary keys', () => (
+			subject(id).then((result) => {
+				expect(result).to.include.keys('id', 'prefLabel', 'apiUrl', 'attributes', 'url', 'types', 'type', 'directType');
+				expect(result).to.not.include.keys('predicate');
+			})
+		));
 	});
 
 	context('Response - not found', () => {
