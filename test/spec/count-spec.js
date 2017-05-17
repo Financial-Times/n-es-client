@@ -1,4 +1,5 @@
 const chai = require('chai');
+const proxyquire =  require('proxyquire');
 const sinon = require('sinon');
 
 chai.should();
@@ -73,8 +74,31 @@ describe('Count', () => {
 		body.should.eql(JSON.stringify({ query }));
 	})
 
+	it('should be able to set the query and the timeout', () => {
+		const query = {
+			term: {
+				'metadata.idV1': 'Ng==-U2VjdGlvbnM='
+			}
+		};
+		count(query, 1000, { signedFetch: signedFetchStub });
+		const [, { body, timeout }] = signedFetchStub.lastCall.args;
+		body.should.eql(JSON.stringify({ query }));
+		timeout.should.equal(1000);
+	})
+
 	it('should handle the data correctly', () => {
 		return count(undefined, undefined, { signedFetch: signedFetchStub })
 			.then(actualCount => actualCount.should.equal(2649));
+	})
+
+	it('should use required signedFetch, if no dependecy given', () => {
+		const count = proxyquire('../../lib/count', {
+			'signed-aws-es-fetch': signedFetchStub
+		});
+
+		return count()
+			.then(() => {
+				signedFetchStub.should.have.been.called;
+			});
 	})
 });
