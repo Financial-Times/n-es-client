@@ -68,7 +68,7 @@ describe('Count', () => {
 				'metadata.idV1': 'Ng==-U2VjdGlvbnM='
 			}
 		};
-		count({ query }, undefined, { signedFetch: signedFetchStub });
+		count(query, undefined, { signedFetch: signedFetchStub });
 		const [, { body }] = signedFetchStub.lastCall.args;
 		body.should.eql(JSON.stringify({ query }));
 	})
