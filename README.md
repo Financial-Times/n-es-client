@@ -60,6 +60,20 @@ es.search({
 });
 ```
 
+### `.count(query[, timeout])`
+
+Get the number of items by search query (the full [query DSL][4] is available). Returns a number.
+
+#### Example
+
+```js
+es.count({
+    term: {
+        'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54'
+    }
+});
+```
+
 ### `.tag(uuid[, timeout])`
 
 Get a single TME tag by UUID. Returns an object or `undefined` if no matches were found.

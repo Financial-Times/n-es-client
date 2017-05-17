@@ -19,7 +19,9 @@
     "lintspaces-cli": "^0.6.0",
     "mocha": "^3.2.0",
     "nock": "^9.0.11",
-    "nyc": "^10.2.0"
+    "nyc": "^10.2.0",
+    "proxyquire": "^1.8.0",
+    "sinon": "^2.2.0"
   },
   "engines": {
     "node": ">=6.0.0"
