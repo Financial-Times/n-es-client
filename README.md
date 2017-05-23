@@ -33,7 +33,7 @@ es.get('cce58e8e-158c-11e7-80f4-13e067d5072c', { _source: ['id', 'title'] })
 
 ### `.mget(options[, timeout][, dataHandler])`
 
-Get multiple content items by UUID. Returns an array of content sources for the items that were found. Allows a custom data handler callback function.
+Get multiple content items by UUID. By default returns an array of content sources for the items that were found but allows an optional custom data handler function.
 
 #### Example
 
@@ -46,7 +46,7 @@ es.mget({
 
 ### `.search(options[, timeout][, dataHandler])`
 
-Get content items by search query (the full [query DSL][4] is available). The default sort order is by `publishedDate` descending and with a query `size` of 10. Returns an array of content sources for the items that matched. Allows a custom data handler callback function.
+Get content items by search query (the full [query DSL][4] is available). The default sort order is by `publishedDate` descending and with a query `size` of 10. By default returns an array of content sources for the items that matched but allows an optional custom data handler function.
 
 #### Example
 
