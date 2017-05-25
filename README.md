@@ -39,8 +39,14 @@ Get multiple content items by UUID. By default returns an array of content sourc
 
 ```js
 es.mget({
-    _source: ['id', 'title'],
     ids: ['cce58e8e-158c-11e7-80f4-13e067d5072c', '0615fc8c-1558-11e7-80f4-13e067d5072c']
+})
+
+es.mget({
+    docs: [
+        { _id: 'cce58e8e-158c-11e7-80f4-13e067d5072c', _source: ['title'] },
+        { _id: '0615fc8c-1558-11e7-80f4-13e067d5072c', _source: ['title'] }
+    ]
 })
 ```
 
