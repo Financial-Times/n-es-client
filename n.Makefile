@@ -30,12 +30,12 @@ NPM_INSTALL = npm prune --production=false && npm install
 BOWER_INSTALL = bower prune && bower install --config.registry.search=http://registry.origami.ft.com --config.registry.search=https://bower.herokuapp.com
 JSON_GET_VALUE = grep $1 | head -n 1 | sed 's/[," ]//g' | cut -d : -f 2
 IS_GIT_IGNORED = grep -q $(if $1, $1, $@) .gitignore
-VERSION = v21
+VERSION = v32
 APP_NAME = $(shell cat package.json 2>/dev/null | $(call JSON_GET_VALUE,name))
 DONE = echo ✓ $@ done
 CONFIG_VARS = curl -fsL https://ft-next-config-vars.herokuapp.com/$1/$(call APP_NAME)$(if $2,.$2,) -H "Authorization: `heroku config:get APIKEY --app ft-next-config-vars`"
 IS_USER_FACING = `find . -type d \( -path ./bower_components -o -path ./node_modules \) -prune -o -name '*.html' -print`
-MAKEFILE_HAS_A11Y = `grep -rli "make a11y" Makefile`
+MAKEFILE_HAS_A11Y = `grep -rli "make a11y\|a11y:" Makefile`
 
 #
 # META TASKS
@@ -96,7 +96,7 @@ ifneq ($(CIRCLE_BUILD_NUM),)
 ifneq ($(shell grep -s -Fim 1 n-ui bower.json),)
 # versions in package.json and bower.json are not equal
 ifneq ($(shell awk '$$1 == "\"version\":" {print $$2}' bower_components/n-ui/.bower.json | sed s/,//),$(shell awk '$$1 == "\"version\":" {print $$2}'  node_modules/@financial-times/n-ui/package.json | sed s/,//))
-	$(error 'Projects using n-ui must maintain parity between versions. Rebuild without cache and update your bower.json and package.json if necessary')
+	$(error 'Projects using n-ui must maintain parity between versions. Rebuild without cache and update your bower.json and package.json if necessary. If this error persists make sure that the n-ui build succeeded in publishing a new version to NPM and that both NPM and Bower registries have the latest version.')
 endif
 endif
 endif
@@ -153,9 +153,34 @@ ENV_MSG_CANT_GET = "Error: Cannot get config vars for this service. Check you ar
 	@if [ ! -z $(CIRCLECI) ]; then (echo $(ENV_MSG_CIRCLECI) && exit 1); fi
 	@$(call CONFIG_VARS,development,env) > .env && perl -pi -e 's/="(.*)"/=\1/' .env && $(DONE) || (echo $(ENV_MSG_CANT_GET) && rm .env && exit 1);
 
+# replace .env with this when you want to use the vault instead of config-vars
+.env-vault: vault-cli
+	@if [[ $(shell grep --count *.env* .gitignore) -eq 0 ]]; then (echo $(ENV_MSG_IGNORE_ENV) && exit 1); fi
+	@if [ ! -e package.json ]; then (echo $(ENV_MSG_PACKAGE_JSON) && exit 1); fi
+	@if [ ! -z $(CIRCLECI) ]; then (echo $(ENV_MSG_CIRCLECI) && exit 1); fi
+# get development config from the vault
+# - the tail command removes the first three lines (vault metadata)
+# - the sed command removes the last line (empty line)
+# - the perl command changes remaining lines to key=value format
+	@vault read secret/teams/next/$$(echo $(APP_NAME) | sed 's/^ft-//')/development \
+		| tail -n +4 \
+		| sed -e '$$ d' \
+		| perl -pe 's/^([^ \t]+)\s+(.+)$$/\1=\2/' \
+		> .env
+	@vault read secret/teams/next/next-globals/development \
+		| tail -n +4 \
+		| sed -e '$$ d' \
+		| perl -pe 's/^([^ \t]+)\s+(.+)$$/\1=\2/' \
+		>> .env
+	@$(DONE)
+
 MSG_HEROKU_CLI = "Please make sure the Heroku CLI toolbelt is installed - see https://toolbelt.heroku.com/. And make sure you are authenticated by running ‘heroku login’. If this is not an app, delete Procfile."
 heroku-cli:
 	@if [ -e Procfile ]; then heroku auth:whoami &>/dev/null || (echo $(MSG_HEROKU_CLI) && exit 1); fi
+
+MSG_VAULT_CLI = "Please make sure the Vault CLI is installed - see https://github.com/Financial-Times/vault/wiki/Getting-Started. And make sure you are authenticated."
+vault-cli:
+	@if [ -e Procfile ] && [[ $$(vault token-lookup 2>&1 | grep -c error) -gt 0 ]]; then (echo $(MSG_VAULT_CLI) && exit 1); fi
 
 # VERIFY SUB-TASKS
 
@@ -174,8 +199,8 @@ VERIFY_MSG_NO_PA11Y = "\n**** Error ****\nIt looks like your code is user-facing
 #check if project has HTML and missing make a11y command
 #check if project has demo app if there's a make a11y command
 _verify_pa11y_testable:
-	@if [ "$(IS_USER_FACING)" ] && [ -z $(MAKEFILE_HAS_A11Y) ] && [ ! ${IGNORE_A11Y} ]; then (printf $(VERIFY_MSG_NO_PA11Y) && exit 1); fi
-	@if [ ! -d server ] && [ -d templates ] && [ ! -f demos/app.js ]; then (echo $(VERIFY_MSG_NO_DEMO) && exit 1); fi
+	@if [ ! -z "$(IS_USER_FACING)" ] && [ -z $(MAKEFILE_HAS_A11Y) ] && [ ! ${IGNORE_A11Y} ]; then (printf $(VERIFY_MSG_NO_PA11Y) && exit 1); fi
+	@if [ ! -z "$(IS_USER_FACING)" ] && [ ! -d server ] && [ ! -f demos/app.js ]; then (echo $(VERIFY_MSG_NO_DEMO) && exit 1); fi
 	@$(DONE)
 
 _run_pa11y:
@@ -221,6 +246,7 @@ hel%: ## help: Show this help message.
 	@grep -Eh '^.+:\ ##\ .+' ${MAKEFILE_LIST} | cut -d ' ' -f '3-' | column -t -s ':'
 
 # Wrapper for make deploy which prevents it running when build is a nightly
+# Nightly builds are trigger by next-rebuild-bot
 deploy-by-day:
 ifeq ($(FT_NIGHTLY_BUILD),)
 	$(MAKE) deploy
