@@ -17,9 +17,13 @@ export ES_AWS_SECRET_ACCESS_KEY=456
 
 ## Usage
 
-All methods return a promise. If a request errors then it will be rejected with an HTTP error. Each method accepts an options object that will be preserved verbatim and sent with the request, either stringified as part of the URL or as the `POST` body. All methods have a final, optional `timeout` argument that defaults to 3 seconds.
+All methods return a promise. If a request errors then it will be rejected with an appropriate HTTP error. Each method accepts an options object that will be preserved verbatim and sent with the request, either stringified as part of the URL or as the `POST` body.
 
-It is _highly recommended_ to use [source filtering][3] to fetch only the fields you require.
+All methods have an optional `timeout` argument that defaults to 3 seconds.
+
+Some methods allow a custom `dataHandler` argument that will receive and may manipulate the raw response from Elasticsearch instead of the default handler.
+
+It is _highly recommended_ to always use [source filtering][3] to fetch only the fields you require.
 
 ### `.get(uuid[, options][, timeout])`
 
@@ -82,11 +86,11 @@ es.count({
 
 ### `.tag(uuid[, timeout])`
 
-Get a single TME tag by UUID. Returns an object or `undefined` if no matches were found.
+Get a single metadata tag by TME ID. Returns an object or `undefined` if no matches were found.
 
 ### `.concept(uuid[, timeout])`
 
-Get a single concept annotation by UUID. Returns an object or `undefined` if no matches were found.
+Get a single concept by UUID. Returns an object or `undefined` if no matches were found.
 
 [1]: https://github.com/matthew-andrews/signed-aws-es-fetch
 [2]: https://www.npmjs.com/package/http-errors
