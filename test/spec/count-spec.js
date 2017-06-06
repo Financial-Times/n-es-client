@@ -26,7 +26,7 @@ describe('Count', () => {
 	it('should call the correct endpoint', () => {
 		count(undefined, undefined, { signedAwsEsFetch: signedAwsEsFetchStub });
 		const [url] = signedAwsEsFetchStub.lastCall.args;
-		url.should.equal('https://next-elastic.ft.com/v3_api_v2/item/_count');
+		url.should.equal('https://next-elastic.ft.com/content/item/_count');
 	})
 
 	it('should send a POST request', () => {

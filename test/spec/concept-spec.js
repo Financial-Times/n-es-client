@@ -17,7 +17,7 @@ describe('Concept', () => {
 
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_search')
+				.post('/content/item/_search')
 				.reply(200, fixtureFound);
 		});
 
@@ -52,7 +52,7 @@ describe('Concept', () => {
 
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_search')
+				.post('/content/item/_search')
 				.reply(200, fixtureNotFound);
 		});
 
@@ -66,7 +66,7 @@ describe('Concept', () => {
 	context('Response - error', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_search')
+				.post('/content/item/_search')
 				.reply(500);
 		});
 
