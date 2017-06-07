@@ -17,7 +17,7 @@ describe('Multi get', () => {
 			const ids = [123, 456, 789];
 
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_mget', (body) => {
+				.post('/content/item/_mget', (body) => {
 					return body.ids.every((id, i) => id === ids[i]);
 				})
 				.reply(200, fixtureWithResults);
@@ -29,7 +29,7 @@ describe('Multi get', () => {
 			const source = 'id,title';
 
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_mget', (body) => {
+				.post('/content/item/_mget', (body) => {
 					return body._source === source;
 				})
 				.reply(200, fixtureWithResults);
@@ -41,7 +41,7 @@ describe('Multi get', () => {
 	context('Response - with results', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_mget')
+				.post('/content/item/_mget')
 				.reply(200, fixtureWithResults);
 		});
 
@@ -64,7 +64,7 @@ describe('Multi get', () => {
 	context('Response - no results', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_mget')
+				.post('/content/item/_mget')
 				.reply(200, fixtureNoResults);
 		});
 
@@ -84,7 +84,7 @@ describe('Multi get', () => {
 	context('Response - error', () => {
 		beforeEach(() => {
 			nock('https://next-elastic.ft.com')
-				.post('/v3_api_v2/item/_mget')
+				.post('/content/item/_mget')
 				.reply(500);
 		});
 
