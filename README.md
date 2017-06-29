@@ -78,8 +78,8 @@ Get the number of items by search query (the full [query DSL][4] is available). 
 
 ```js
 es.count({
-    term: {
-        'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54'
+    query: {
+        term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
     }
 });
 ```
