@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+
+echo "pre push hook running..."
+make unit-test
