@@ -13,6 +13,7 @@
     "signed-aws-es-fetch": "^1.3.0"
   },
   "devDependencies": {
+    "@financial-times/n-gage": "^1.8.22",
     "chai": "^3.5.0",
     "coveralls": "^2.13.0",
     "eslint": "^3.18.0",
@@ -24,5 +25,10 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "scripts": {
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   }
 }
