@@ -84,10 +84,6 @@ es.count({
 });
 ```
 
-### `.tag(uuid[, timeout])`
-
-Get a single metadata tag by TME ID. Returns an object or `undefined` if no matches were found.
-
 ### `.concept(uuid[, timeout])`
 
 Get a single concept by UUID. Returns an object or `undefined` if no matches were found.
