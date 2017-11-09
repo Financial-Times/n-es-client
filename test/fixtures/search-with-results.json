@@ -1,165 +1,165 @@
 {
-	"took": 17,
-	"timed_out": false,
-	"_shards": {
-		"total": 5,
-		"successful": 5,
-		"failed": 0
-	},
-	"hits": {
-		"total": 680996,
-		"max_score": null,
-		"hits": [
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-				"_score": null,
-				"_source": {
-					"id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-					"publishedDate": "2017-03-30T17:28:35.000Z",
-					"title": "Pupils from wealthy homes tend to earn more",
-					"url": "https://www.ft.com/content/af1f01be-1564-11e7-b0c1-37e417ee6c76"
-				},
-				"sort": [
-					1490894915000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-				"_score": null,
-				"_source": {
-					"id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-					"publishedDate": "2017-03-30T17:17:42.000Z",
-					"title": "Trump’s leap backwards to the smoggy age of coal",
-					"url": "https://www.ft.com/content/803d0c6e-153d-11e7-b0c1-37e417ee6c76"
-				},
-				"sort": [
-					1490894262000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-				"_score": null,
-				"_source": {
-					"id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-					"publishedDate": "2017-03-30T17:15:42.000Z",
-					"title": "Political risk stalks booming Silicon Valley",
-					"url": "https://www.ft.com/content/2690a2d8-148f-11e7-80f4-13e067d5072c"
-				},
-				"sort": [
-					1490894142000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "6b032668-155f-11e7-80f4-13e067d5072c",
-				"_score": null,
-				"_source": {
-					"id": "6b032668-155f-11e7-80f4-13e067d5072c",
-					"publishedDate": "2017-03-30T17:12:40.000Z",
-					"title": "VW agrees to pay additional $157m to settle environmental claims",
-					"url": "https://www.ft.com/content/6b032668-155f-11e7-80f4-13e067d5072c"
-				},
-				"sort": [
-					1490893960000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "64e70fac-155e-11e7-b0c1-37e417ee6c76",
-				"_score": null,
-				"_source": {
-					"id": "64e70fac-155e-11e7-b0c1-37e417ee6c76",
-					"publishedDate": "2017-03-30T17:08:49.000Z",
-					"title": "Elon Musk’s brain-hacking efforts face scientific headaches",
-					"url": "https://www.ft.com/content/64e70fac-155e-11e7-b0c1-37e417ee6c76"
-				},
-				"sort": [
-					1490893729000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "2331a33d-c5db-3a50-a549-8746f3067f0f",
-				"_score": null,
-				"_source": {
-					"id": "2331a33d-c5db-3a50-a549-8746f3067f0f",
-					"publishedDate": "2017-03-30T17:08:16.000Z",
-					"title": "Euro slides to two-week low against greenback",
-					"url": "https://www.ft.com/content/2331a33d-c5db-3a50-a549-8746f3067f0f"
-				},
-				"sort": [
-					1490893696000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "c3f81a26-155f-11e7-80f4-13e067d5072c",
-				"_score": null,
-				"_source": {
-					"id": "c3f81a26-155f-11e7-80f4-13e067d5072c",
-					"publishedDate": "2017-03-30T17:07:14.000Z",
-					"title": "‘Hard’ and ‘soft’ US data paint a muddled picture",
-					"url": "https://www.ft.com/content/c3f81a26-155f-11e7-80f4-13e067d5072c"
-				},
-				"sort": [
-					1490893634000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "88f5d2a6-155a-11e7-b0c1-37e417ee6c76",
-				"_score": null,
-				"_source": {
-					"id": "88f5d2a6-155a-11e7-b0c1-37e417ee6c76",
-					"publishedDate": "2017-03-30T17:03:11.000Z",
-					"title": "HSBC in move to improve services for transgender customers",
-					"url": "https://www.ft.com/content/88f5d2a6-155a-11e7-b0c1-37e417ee6c76"
-				},
-				"sort": [
-					1490893391000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "aa8fbace-14c6-11e7-80f4-13e067d5072c",
-				"_score": null,
-				"_source": {
-					"id": "aa8fbace-14c6-11e7-80f4-13e067d5072c",
-					"publishedDate": "2017-03-30T16:58:39.000Z",
-					"title": "Trump vow to fight hardliners raises fears for Republican agenda",
-					"url": "https://www.ft.com/content/aa8fbace-14c6-11e7-80f4-13e067d5072c"
-				},
-				"sort": [
-					1490893119000
-				]
-			},
-			{
-				"_index": "content_2017-03-22",
-				"_type": "item",
-				"_id": "201cf2f0-153c-11e7-b0c1-37e417ee6c76",
-				"_score": null,
-				"_source": {
-					"id": "201cf2f0-153c-11e7-b0c1-37e417ee6c76",
-					"publishedDate": "2017-03-30T16:53:28.000Z",
-					"title": "CMC Markets retail platform gains users despite tough new rules",
-					"url": "https://www.ft.com/content/201cf2f0-153c-11e7-b0c1-37e417ee6c76"
-				},
-				"sort": [
-					1490892808000
-				]
-			}
-		]
-	}
+  "took": 17,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 680996,
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
+        "_score": null,
+        "_source": {
+          "id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
+          "publishedDate": "2017-03-30T17:28:35.000Z",
+          "title": "Pupils from wealthy homes tend to earn more",
+          "url": "https://www.ft.com/content/af1f01be-1564-11e7-b0c1-37e417ee6c76"
+        },
+        "sort": [
+          1490894915000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
+        "_score": null,
+        "_source": {
+          "id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
+          "publishedDate": "2017-03-30T17:17:42.000Z",
+          "title": "Trump’s leap backwards to the smoggy age of coal",
+          "url": "https://www.ft.com/content/803d0c6e-153d-11e7-b0c1-37e417ee6c76"
+        },
+        "sort": [
+          1490894262000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
+        "_score": null,
+        "_source": {
+          "id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
+          "publishedDate": "2017-03-30T17:15:42.000Z",
+          "title": "Political risk stalks booming Silicon Valley",
+          "url": "https://www.ft.com/content/2690a2d8-148f-11e7-80f4-13e067d5072c"
+        },
+        "sort": [
+          1490894142000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "6b032668-155f-11e7-80f4-13e067d5072c",
+        "_score": null,
+        "_source": {
+          "id": "6b032668-155f-11e7-80f4-13e067d5072c",
+          "publishedDate": "2017-03-30T17:12:40.000Z",
+          "title": "VW agrees to pay additional $157m to settle environmental claims",
+          "url": "https://www.ft.com/content/6b032668-155f-11e7-80f4-13e067d5072c"
+        },
+        "sort": [
+          1490893960000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "64e70fac-155e-11e7-b0c1-37e417ee6c76",
+        "_score": null,
+        "_source": {
+          "id": "64e70fac-155e-11e7-b0c1-37e417ee6c76",
+          "publishedDate": "2017-03-30T17:08:49.000Z",
+          "title": "Elon Musk’s brain-hacking efforts face scientific headaches",
+          "url": "https://www.ft.com/content/64e70fac-155e-11e7-b0c1-37e417ee6c76"
+        },
+        "sort": [
+          1490893729000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "2331a33d-c5db-3a50-a549-8746f3067f0f",
+        "_score": null,
+        "_source": {
+          "id": "2331a33d-c5db-3a50-a549-8746f3067f0f",
+          "publishedDate": "2017-03-30T17:08:16.000Z",
+          "title": "Euro slides to two-week low against greenback",
+          "url": "https://www.ft.com/content/2331a33d-c5db-3a50-a549-8746f3067f0f"
+        },
+        "sort": [
+          1490893696000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "c3f81a26-155f-11e7-80f4-13e067d5072c",
+        "_score": null,
+        "_source": {
+          "id": "c3f81a26-155f-11e7-80f4-13e067d5072c",
+          "publishedDate": "2017-03-30T17:07:14.000Z",
+          "title": "‘Hard’ and ‘soft’ US data paint a muddled picture",
+          "url": "https://www.ft.com/content/c3f81a26-155f-11e7-80f4-13e067d5072c"
+        },
+        "sort": [
+          1490893634000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "88f5d2a6-155a-11e7-b0c1-37e417ee6c76",
+        "_score": null,
+        "_source": {
+          "id": "88f5d2a6-155a-11e7-b0c1-37e417ee6c76",
+          "publishedDate": "2017-03-30T17:03:11.000Z",
+          "title": "HSBC in move to improve services for transgender customers",
+          "url": "https://www.ft.com/content/88f5d2a6-155a-11e7-b0c1-37e417ee6c76"
+        },
+        "sort": [
+          1490893391000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "aa8fbace-14c6-11e7-80f4-13e067d5072c",
+        "_score": null,
+        "_source": {
+          "id": "aa8fbace-14c6-11e7-80f4-13e067d5072c",
+          "publishedDate": "2017-03-30T16:58:39.000Z",
+          "title": "Trump vow to fight hardliners raises fears for Republican agenda",
+          "url": "https://www.ft.com/content/aa8fbace-14c6-11e7-80f4-13e067d5072c"
+        },
+        "sort": [
+          1490893119000
+        ]
+      },
+      {
+        "_index": "content_2017-03-22",
+        "_type": "item",
+        "_id": "201cf2f0-153c-11e7-b0c1-37e417ee6c76",
+        "_score": null,
+        "_source": {
+          "id": "201cf2f0-153c-11e7-b0c1-37e417ee6c76",
+          "publishedDate": "2017-03-30T16:53:28.000Z",
+          "title": "CMC Markets retail platform gains users despite tough new rules",
+          "url": "https://www.ft.com/content/201cf2f0-153c-11e7-b0c1-37e417ee6c76"
+        },
+        "sort": [
+          1490892808000
+        ]
+      }
+    ]
+  }
 }

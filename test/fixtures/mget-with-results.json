@@ -1,56 +1,56 @@
 {
-	"docs": [
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-			"_version": 5,
-			"found": true,
-			"_source": {
-				"id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-				"publishedDate": "2017-03-30T17:28:35.000Z",
-				"title": "Pupils from wealthy homes tend to earn more",
-				"url": "https://www.ft.com/content/af1f01be-1564-11e7-b0c1-37e417ee6c76"
-			}
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-			"_version": 11,
-			"found": true,
-			"_source": {
-				"id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-				"publishedDate": "2017-03-30T17:17:42.000Z",
-				"title": "Trump’s leap backwards to the smoggy age of coal",
-				"url": "https://www.ft.com/content/803d0c6e-153d-11e7-b0c1-37e417ee6c76"
-			}
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-			"_version": 10,
-			"found": true,
-			"_source": {
-				"id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-				"publishedDate": "2017-03-30T17:15:42.000Z",
-				"title": "Political risk stalks booming Silicon Valley",
-				"url": "https://www.ft.com/content/2690a2d8-148f-11e7-80f4-13e067d5072c"
-			}
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "6b032668-155f-11e7-80f4-13e067d5072c",
-			"_version": 8,
-			"found": true,
-			"_source": {
-				"id": "6b032668-155f-11e7-80f4-13e067d5072c",
-				"publishedDate": "2017-03-30T17:12:40.000Z",
-				"title": "VW agrees to pay additional $157m to settle environmental claims",
-				"url": "https://www.ft.com/content/6b032668-155f-11e7-80f4-13e067d5072c"
-			}
-		}
-	]
+  "docs": [
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
+      "_version": 5,
+      "found": true,
+      "_source": {
+        "id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
+        "publishedDate": "2017-03-30T17:28:35.000Z",
+        "title": "Pupils from wealthy homes tend to earn more",
+        "url": "https://www.ft.com/content/af1f01be-1564-11e7-b0c1-37e417ee6c76"
+      }
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
+      "_version": 11,
+      "found": true,
+      "_source": {
+        "id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
+        "publishedDate": "2017-03-30T17:17:42.000Z",
+        "title": "Trump’s leap backwards to the smoggy age of coal",
+        "url": "https://www.ft.com/content/803d0c6e-153d-11e7-b0c1-37e417ee6c76"
+      }
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
+      "_version": 10,
+      "found": true,
+      "_source": {
+        "id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
+        "publishedDate": "2017-03-30T17:15:42.000Z",
+        "title": "Political risk stalks booming Silicon Valley",
+        "url": "https://www.ft.com/content/2690a2d8-148f-11e7-80f4-13e067d5072c"
+      }
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "6b032668-155f-11e7-80f4-13e067d5072c",
+      "_version": 8,
+      "found": true,
+      "_source": {
+        "id": "6b032668-155f-11e7-80f4-13e067d5072c",
+        "publishedDate": "2017-03-30T17:12:40.000Z",
+        "title": "VW agrees to pay additional $157m to settle environmental claims",
+        "url": "https://www.ft.com/content/6b032668-155f-11e7-80f4-13e067d5072c"
+      }
+    }
+  ]
 }
