@@ -43,14 +43,14 @@ Get multiple content items by UUID. By default returns an array of content sourc
 
 ```js
 es.mget({
-    ids: ['cce58e8e-158c-11e7-80f4-13e067d5072c', '0615fc8c-1558-11e7-80f4-13e067d5072c']
+	ids: ['cce58e8e-158c-11e7-80f4-13e067d5072c', '0615fc8c-1558-11e7-80f4-13e067d5072c']
 })
 
 es.mget({
-    docs: [
-        { _id: 'cce58e8e-158c-11e7-80f4-13e067d5072c', _source: ['title'] },
-        { _id: '0615fc8c-1558-11e7-80f4-13e067d5072c', _source: ['title'] }
-    ]
+	docs: [
+		{ _id: 'cce58e8e-158c-11e7-80f4-13e067d5072c', _source: ['title'] },
+		{ _id: '0615fc8c-1558-11e7-80f4-13e067d5072c', _source: ['title'] }
+	]
 })
 ```
 
@@ -62,11 +62,11 @@ Get content items by search query (the full [query DSL][4] is available). The de
 
 ```js
 es.search({
-    _source: ['id', 'title'],
-    query: {
-        term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
-    },
-    size: 100
+	_source: ['id', 'title'],
+	query: {
+		term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
+	},
+	size: 100
 });
 ```
 
@@ -78,9 +78,9 @@ Get the number of items by search query (the full [query DSL][4] is available). 
 
 ```js
 es.count({
-    query: {
-        term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
-    }
+	query: {
+		term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
+	}
 });
 ```
 

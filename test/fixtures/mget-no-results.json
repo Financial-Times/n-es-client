@@ -1,28 +1,28 @@
 {
-	"docs": [
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
-			"found": false
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "ff3d0c6e-153d-11e7-b0c1-37e417ee6c76",
-			"found": false
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "ff90a2d8-148f-11e7-80f4-13e067d5072c",
-			"found": false
-		},
-		{
-			"_index": "content_2017-03-22",
-			"_type": "item",
-			"_id": "ff032668-155f-11e7-80f4-13e067d5072c",
-			"found": false
-		}
-	]
+  "docs": [
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
+      "found": false
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "ff3d0c6e-153d-11e7-b0c1-37e417ee6c76",
+      "found": false
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "ff90a2d8-148f-11e7-80f4-13e067d5072c",
+      "found": false
+    },
+    {
+      "_index": "content_2017-03-22",
+      "_type": "item",
+      "_id": "ff032668-155f-11e7-80f4-13e067d5072c",
+      "found": false
+    }
+  ]
 }
