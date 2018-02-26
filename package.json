@@ -13,15 +13,15 @@
     "signed-aws-es-fetch": "^1.4.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^1.16.0",
-    "chai": "^3.5.0",
+    "@financial-times/n-gage": "^1.19.8",
+    "chai": "^4.1.0",
     "coveralls": "^3.0.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.18.0",
     "lintspaces-cli": "^0.6.0",
-    "mocha": "^3.5.3",
-    "nock": "^9.0.22",
-    "nyc": "^11.2.1",
-    "sinon": "^4.0.0"
+    "mocha": "^5.0.0",
+    "nock": "^9.2.0",
+    "nyc": "^11.5.0",
+    "sinon": "^4.4.0"
   },
   "engines": {
     "node": ">=6.0.0"

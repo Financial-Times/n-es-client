@@ -1,6 +1,14 @@
-# n-es-client [![CircleCI](https://circleci.com/gh/Financial-Times/n-es-client.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-es-client) [![Coverage Status](https://coveralls.io/repos/github/Financial-Times/n-es-client/badge.svg?branch=master)](https://coveralls.io/github/Financial-Times/n-es-client?branch=master)
+# n-es-client
+
+[![CircleCI](https://circleci.com/gh/Financial-Times/n-es-client.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-es-client) [![Coverage Status](https://coveralls.io/repos/github/Financial-Times/n-es-client/badge.svg?branch=master)](https://coveralls.io/github/Financial-Times/n-es-client?branch=master)
 
 A very thin wrapper around [signed fetch][1] and [http-errors][2] to search and retrieve content from our Elasticsearch clusters in a simple, DRY manner.
+
+```js
+const client = require('@financial-times/n-es-client');
+
+client.get('cce58e8e-158c-11e7-80f4-13e067d5072c').then((data) => { … });
+```
 
 ## Installation
 
@@ -8,10 +16,10 @@ A very thin wrapper around [signed fetch][1] and [http-errors][2] to search and 
 # install from NPM
 $ npm i -S @financial-times/n-es-client
 
-# add AWS access key
+# add Elasticsearch read AWS access key
 export ES_AWS_ACCESS_KEY=123
 
-# add AWS secret access key
+# add Elasticsearch read AWS secret access key
 export ES_AWS_SECRET_ACCESS_KEY=456
 ```
 
@@ -32,7 +40,7 @@ Get a content item by UUID. Returns the content source.
 #### Example
 
 ```js
-es.get('cce58e8e-158c-11e7-80f4-13e067d5072c', { _source: ['id', 'title'] })
+client.get('cce58e8e-158c-11e7-80f4-13e067d5072c', { _source: ['id', 'title'] })
 ```
 
 ### `.mget(options[, timeout][, dataHandler])`
@@ -42,11 +50,11 @@ Get multiple content items by UUID. By default returns an array of content sourc
 #### Example
 
 ```js
-es.mget({
+client.mget({
 	ids: ['cce58e8e-158c-11e7-80f4-13e067d5072c', '0615fc8c-1558-11e7-80f4-13e067d5072c']
 })
 
-es.mget({
+client.mget({
 	docs: [
 		{ _id: 'cce58e8e-158c-11e7-80f4-13e067d5072c', _source: ['title'] },
 		{ _id: '0615fc8c-1558-11e7-80f4-13e067d5072c', _source: ['title'] }
@@ -61,7 +69,7 @@ Get content items by search query (the full [query DSL][4] is available). The de
 #### Example
 
 ```js
-es.search({
+client.search({
 	_source: ['id', 'title'],
 	query: {
 		term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
@@ -77,7 +85,7 @@ Get the number of items by search query (the full [query DSL][4] is available). 
 #### Example
 
 ```js
-es.count({
+client.count({
 	query: {
 		term: { 'annotations.id': 'dbb0bdae-1f0c-11e4-b0cb-b2227cce2b54' }
 	}
