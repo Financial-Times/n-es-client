@@ -1,0 +1,5 @@
+test/
+.circle.yml
+ft.yml
+Makefile
+secret-squirrel.js
