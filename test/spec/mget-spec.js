@@ -77,8 +77,8 @@ describe('Multi get', () => {
 		it('filters out not found documents', () => {
 			subject().then((result) => {
 				expect(result.length).to.equal(0);
-			})
-		})
+			});
+		});
 	});
 
 	context('Response - error', () => {
