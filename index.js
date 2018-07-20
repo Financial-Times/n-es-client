@@ -1,9 +1,14 @@
-module.exports = {
-	search: require('./lib/search'),
-	count: require('./lib/count'),
-	mget: require('./lib/mget'),
-	get: require('./lib/get'),
-	tag: require('./lib/tag'),
-	concept: require('./lib/concept'),
-	mapping: require('./lib/mapping')
-};
+function nEsClient({auth}) {
+	if (auth) nEsClient.auth = auth;
+	return nEsClient;
+}
+
+nEsClient.search = require('./lib/search');
+nEsClient.count = require('./lib/count');
+nEsClient.mget = require('./lib/mget');
+nEsClient.get = require('./lib/get');
+nEsClient.tag = require('./lib/tag');
+nEsClient.concept = require('./lib/concept');
+nEsClient.mapping = require('./lib/mapping');
+
+module.exports = nEsClient;
