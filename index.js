@@ -1,6 +1,15 @@
-function nEsClient({auth}) {
-	if (auth) nEsClient.auth = auth;
-	return nEsClient;
+function nEsClient({auth} = {}) {
+	if (auth) this.auth = auth;
+
+	this.search = require('./lib/search');
+	this.count = require('./lib/count');
+	this.mget = require('./lib/mget');
+	this.get = require('./lib/get');
+	this.tag = require('./lib/tag');
+	this.concept = require('./lib/concept');
+	this.mapping = require('./lib/mapping');
+
+	return this;
 }
 
 nEsClient.search = require('./lib/search');
