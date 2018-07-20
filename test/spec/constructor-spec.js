@@ -38,8 +38,8 @@ describe('constructor with auth', () => {
 		handleResponseFake = null;
 	});
 
-	context('count — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+	context('with arg', () => {
+		it('#count', async () => {
 			handleResponseFake = Promise.resolve(true);
 			fetchStub.returns(Promise.resolve(true));
 
@@ -51,10 +51,8 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
-	});
 
-	context('get — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+		it('#get', async () => {
 			fetchStub.returns(Promise.resolve(true));
 			handleResponseFake = Promise.resolve(true);
 
@@ -66,10 +64,8 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
-	});
 
-	context('mget — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+		it('#mget', async () => {
 			fetchStub.returns(Promise.resolve(true));
 			handleResponseFake = {
 				docs: []
@@ -83,10 +79,8 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
-	});
 
-	context('search — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+		it('#search', async () => {
 			fetchStub.returns(Promise.resolve(true));
 			handleResponseFake = {
 				hits: {
@@ -103,10 +97,8 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
-	});
 
-	context('mapping — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+		it('#mapping', async () => {
 			fetchStub.returns(Promise.resolve(true));
 
 			await subject.mapping('test');
@@ -117,10 +109,8 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
-	});
 
-	context('concept — with constructor', () => {
-		it('passes credentials to n-es-fetch', async () => {
+		it('#concept', async () => {
 			fetchStub.returns(Promise.resolve(true));
 			handleResponseFake = {
 				hits: {
@@ -137,10 +127,103 @@ describe('constructor with auth', () => {
 				'test-credentials'
 			);
 		});
+
+		it('#tag', async () => {
+			chai.expect(subject.tag('test')).to.be.a('promise');
+		});
 	});
 
-	context('tag — with constructor', () => {
-		it('is deprecated', async () => {
+	context('no arg', () => {
+		it('#count', async () => {
+			handleResponseFake = Promise.resolve(true);
+			fetchStub.returns(Promise.resolve(true));
+
+			await subjectNoArg.count('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#get', async () => {
+			fetchStub.returns(Promise.resolve(true));
+			handleResponseFake = Promise.resolve(true);
+
+			await subjectNoArg.get('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#mget', async () => {
+			fetchStub.returns(Promise.resolve(true));
+			handleResponseFake = {
+				docs: []
+			};
+
+			await subjectNoArg.mget('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#search', async () => {
+			fetchStub.returns(Promise.resolve(true));
+			handleResponseFake = {
+				hits: {
+					hits: [],
+					total: 0,
+				}
+			};
+
+			await subjectNoArg.search('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#mapping', async () => {
+			fetchStub.returns(Promise.resolve(true));
+
+			await subjectNoArg.mapping('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#concept', async () => {
+			fetchStub.returns(Promise.resolve(true));
+			handleResponseFake = {
+				hits: {
+					hits: [],
+					total: 0,
+				}
+			};
+
+			await subjectNoArg.concept('test');
+
+			fetchStub.should.have.been.calledWith(
+				sinon.match.defined,
+				sinon.match.defined,
+				sinon.match.undefined
+			);
+		});
+
+		it('#tag', async () => {
 			chai.expect(subject.tag('test')).to.be.a('promise');
 		});
 	});
