@@ -1,5 +1,5 @@
 test/
-.circle.yml
+.circleci
 ft.yml
 Makefile
 secret-squirrel.js
