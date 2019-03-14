@@ -92,6 +92,21 @@ client.count({
 });
 ```
 
+### `.msearch(options[, timeout][, dataHandler])`
+
+Perform multiple search queries with one request. By default returns an array of query responses including total matches and content sources for the items that were found but allows an optional custom data handler function.
+
+#### Example
+
+```js
+client.msearch({
+	queries: [
+		{ query: { term: { 'annotations.id': 'cce58e8e-158c-11e7-80f4-13e067d5072c' } } },
+		{ query: { term: { 'annotations.id': '0615fc8c-1558-11e7-80f4-13e067d5072c' } } }
+	]
+})
+```
+
 ### `.concept(uuid[, timeout])`
 
 Get a single concept by UUID. Returns an object or `undefined` if no matches were found.
