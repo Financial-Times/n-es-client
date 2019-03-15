@@ -14,19 +14,39 @@ describe('msearch', () => {
 	});
 
 	context('With options', () => {
-		it('formats each query onto a line', () => {
+		it('formats each header and query onto a line', () => {
 			nock('https://next-elastic.ft.com')
 				.post('/content/item/_msearch', (body) => {
-					return body.split(/\n/).length === 4
+					const lines = body.split(/\n/).map(JSON.parse);
+
+					expect(lines.length).to.equal(4);
+
+					return true;
 				})
 				.reply(200, fixtureWithResults);
 
-			return subject({
-				queries: [
-					{ query: 'foo' },
-					{ query: 'bar' }
-				]
-			});
+			return subject([
+				{ query: 'foo' },
+				{ query: 'bar' }
+			]);
+		});
+
+		it('sets defaults for each query', () => {
+			nock('https://next-elastic.ft.com')
+				.post('/content/item/_msearch', (body) => {
+					const lines = body.split(/\n/).map(JSON.parse);
+
+					expect(lines[1]).to.include.keys('query', 'from', 'size', 'sort');
+					expect(lines[3]).to.include.keys('query', 'from', 'size', 'sort');
+
+					return true;
+				})
+				.reply(200, fixtureWithResults);
+
+			return subject([
+				{ query: 'foo' },
+				{ query: 'bar' }
+			]);
 		});
 	});
 
@@ -55,7 +75,8 @@ describe('msearch', () => {
 		it('returns the total for each result set', () => (
 			subject().then((result) => {
 				result.forEach((item, i) => {
-					expect(item.total).to.equal(fixtureWithResults.responses[i].hits.total);
+					const fixtureResponse = fixtureWithResults.responses[i];
+					expect(item.total).to.equal(fixtureResponse.hits.total);
 				});
 			})
 		));

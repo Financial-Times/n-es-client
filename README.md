@@ -92,19 +92,17 @@ client.count({
 });
 ```
 
-### `.msearch(options[, timeout][, dataHandler])`
+### `.msearch(queries[, timeout][, dataHandler])`
 
-Perform multiple search queries with one request. By default returns an array of query responses including total matches and content sources for the items that were found but allows an optional custom data handler function.
+Perform multiple search queries with one request. By default returns an array of query responses including total matches and content sources for the items that were found but allows an optional custom data handler function. Returns an array of result sets in the format `[ { total: number, hits: [] } ]`.
 
 #### Example
 
 ```js
-client.msearch({
-	queries: [
-		{ query: { term: { 'annotations.id': 'cce58e8e-158c-11e7-80f4-13e067d5072c' } } },
-		{ query: { term: { 'annotations.id': '0615fc8c-1558-11e7-80f4-13e067d5072c' } } }
-	]
-})
+client.msearch([
+	{ query: { term: { 'annotations.id': 'cce58e8e-158c-11e7-80f4-13e067d5072c' } } },
+	{ query: { term: { 'annotations.id': '0615fc8c-1558-11e7-80f4-13e067d5072c' } } }
+])
 ```
 
 ### `.concept(uuid[, timeout])`
