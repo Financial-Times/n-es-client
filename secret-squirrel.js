@@ -41,8 +41,11 @@ module.exports = {
 			'88f5d2a6-155a-11e7-b0c1-37e417ee6c76', // test/fixtures/
 			'aa8fbace-14c6-11e7-80f4-13e067d5072c', // test/fixtures/
 			'201cf2f0-153c-11e7-b0c1-37e417ee6c76', // test/fixtures/
-			'27be5e4a-4aac-11e7-919a-1e14ce4af89b', // test/fixtures/
-			'73cc33b5-d0cb-3815-8347-bg24c232324c', // test/spec/
+			'30364c64-f150-11dc-a91a-0000779fd2ac', // test/fixtures/
+			'f3ab96be-b72e-11e7-8c12-5661783e5589', // test/fixtures/
+			'ab0cf1fa-4fbe-11e7-a1f2-db19572361bb', // test/fixtures/
+			'3ace6a68-efa9-11d9-bd3b-00000e2511c8', // test/fixtures/
+			'73cc33b5-d0cb-3815-8347-bg24c232324c'  // test/spec/
 		]
 	}
 };

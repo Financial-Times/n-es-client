@@ -5,5 +5,6 @@ module.exports = {
 	get: require('./lib/get'),
 	tag: require('./lib/tag'),
 	concept: require('./lib/concept'),
-	mapping: require('./lib/mapping')
+	mapping: require('./lib/mapping'),
+	msearch: require('./lib/msearch')
 };
