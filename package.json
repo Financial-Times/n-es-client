@@ -19,7 +19,8 @@
     "mocha": "^5.2.0",
     "nock": "^9.2.0",
     "nyc": "^11.8.0",
-    "sinon": "^5.0.0"
+    "sinon": "^5.0.0",
+    "snyk": "^1.167.2"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -27,6 +28,7 @@
   "scripts": {
     "precommit": "node_modules/.bin/secret-squirrel",
     "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
-    "prepush": "make verify -j3"
+    "prepush": "make verify -j3",
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   }
 }
