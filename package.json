@@ -16,7 +16,7 @@
     "@financial-times/n-gage": "^3.6.0",
     "chai": "^4.1.0",
     "coveralls": "^3.0.0",
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.0",
     "nock": "^9.2.0",
     "nyc": "^11.8.0",
     "sinon": "^5.0.0",
