@@ -18,7 +18,7 @@ describe('Search', () => {
 			const from = 10;
 			const size = 20;
 
-			nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.glb.ft.com')
 				.post('/content/item/_search', (body) => {
 					return body.from === from && body.size === size;
 				})
@@ -30,7 +30,7 @@ describe('Search', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.glb.ft.com')
 				.post('/content/item/_search', (body) => {
 					return body._source === source;
 				})
@@ -42,7 +42,7 @@ describe('Search', () => {
 
 	context('Response - with results', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.glb.ft.com')
 				.post('/content/item/_search')
 				.reply(200, fixtureWithResults);
 		});
@@ -71,7 +71,7 @@ describe('Search', () => {
 
 	context('Response - no results', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.glb.ft.com')
 				.post('/content/item/_search')
 				.reply(200, fixtureNoResults);
 		});
@@ -91,7 +91,7 @@ describe('Search', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.ft.com')
+			nock('https://next-elastic.glb.ft.com')
 				.post('/content/item/_search')
 				.reply(400, fixtureError);
 		});
