@@ -18,7 +18,7 @@ describe('Count', () => {
 				}
 			};
 
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.post('/content/item/_count', (body) => {
 					return body.query.term['metadata.idV1'] === 'Ng==-U2VjdGlvbnM=';
 				})
@@ -30,7 +30,7 @@ describe('Count', () => {
 
 	context('Response - success', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.post('/content/item/_count')
 				.reply(200, fixture);
 		});
@@ -45,7 +45,7 @@ describe('Count', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.post('/content/item/_count')
 				.reply(500);
 		});

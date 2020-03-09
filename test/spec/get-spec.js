@@ -13,7 +13,7 @@ describe('Get', () => {
 
 	context('With options', () => {
 		it('accepts a source parameter', () => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.get(`/content/item/${fixture.id}/_source`)
 				.query((params) => {
 					return params._source === 'id,title';
@@ -26,7 +26,7 @@ describe('Get', () => {
 
 	context('Response - found', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.get(`/content/item/${fixture.id}/_source`)
 				.query(true)
 				.reply(200, fixture);
@@ -41,7 +41,7 @@ describe('Get', () => {
 
 	context('Response - not found', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.gslb.ft.com')
 				.get(`/content/item/${fixture.id}/_source`)
 				.query(true)
 				.reply(404);
