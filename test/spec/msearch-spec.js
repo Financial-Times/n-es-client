@@ -15,7 +15,7 @@ describe('msearch', () => {
 
 	context('With options', () => {
 		it('formats each header and query onto a line', () => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.nlb.ft.com')
 				.post('/content/item/_msearch', (body) => {
 					const lines = body.split(/\n/).map(JSON.parse);
 
@@ -32,7 +32,7 @@ describe('msearch', () => {
 		});
 
 		it('sets defaults for each query', () => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.nlb.ft.com')
 				.post('/content/item/_msearch', (body) => {
 					const lines = body.split(/\n/).map(JSON.parse);
 
@@ -52,7 +52,7 @@ describe('msearch', () => {
 
 	context('Response - with results', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.nlb.ft.com')
 				.post('/content/item/_msearch')
 				.reply(200, fixtureWithResults);
 		});
@@ -94,7 +94,7 @@ describe('msearch', () => {
 
 	context('Response - no results', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.nlb.ft.com')
 				.post('/content/item/_msearch')
 				.reply(200, fixtureNoResults);
 		});
@@ -116,7 +116,7 @@ describe('msearch', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elastic.glb.ft.com')
+			nock('https://next-elasticsearch.nlb.ft.com')
 				.post('/content/item/_msearch')
 				.reply(400, fixtureError);
 		});
