@@ -1,34 +1,43 @@
 {
+  "took": 9,
   "responses": [
-      {
-          "took": 2,
-          "timed_out": false,
-          "_shards": {
-              "total": 4,
-              "successful": 4,
-              "failed": 0
-          },
-          "hits": {
-              "total": 0,
-              "max_score": null,
-              "hits": []
-          },
-          "status": 200
+    {
+      "took": 2,
+      "timed_out": false,
+      "_shards": {
+        "total": 4,
+        "successful": 4,
+        "skipped": 0,
+        "failed": 0
       },
-      {
-          "took": 1,
-          "timed_out": false,
-          "_shards": {
-              "total": 4,
-              "successful": 4,
-              "failed": 0
+      "hits": {
+        "total": {
+          "value": 0,
+          "relation": "eq"
+        },
+        "max_score": null,
+        "hits": []
+      },
+      "status": 200
+    },
+    {
+        "took": 1,
+        "timed_out": false,
+        "_shards": {
+          "total": 4,
+          "successful": 4,
+          "skipped": 0,
+          "failed": 0
+        },
+        "hits": {
+          "total": {
+            "value": 0,
+            "relation": "eq"
           },
-          "hits": {
-              "total": 0,
-              "max_score": null,
-              "hits": []
-          },
-          "status": 200
-      }
+          "max_score": null,
+          "hits": []
+        },
+        "status": 200
+    }
   ]
 }

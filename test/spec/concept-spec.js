@@ -13,11 +13,11 @@ describe('Concept', () => {
 	});
 
 	context('Response - found', () => {
-		const id = '73cc33b5-d0cb-3815-8347-bc49e1ddbd5c';
+		const id = '80871faa-d16f-4c9f-b310-df42104dcecc';
 
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(200, fixtureFound);
 		});
 
@@ -51,8 +51,8 @@ describe('Concept', () => {
 		const id = '73cc33b5-d0cb-3815-8347-bg24c232324c';
 
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(200, fixtureNotFound);
 		});
 
@@ -65,8 +65,8 @@ describe('Concept', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(500);
 		});
 

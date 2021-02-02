@@ -1,139 +1,28 @@
 {
-  "took": 4,
+  "took": 16,
   "timed_out": false,
   "_shards": {
     "total": 4,
     "successful": 4,
+    "skipped": 0,
     "failed": 0
   },
   "hits": {
-    "total": 6043,
-    "max_score": null,
+    "total": {
+      "value": 10000,
+      "relation": "gte"
+    },
+    "max_score": 1.0,
     "hits": [
       {
-        "_index": "content_2017-05-26",
-        "_type": "item",
-        "_id": "ff03ad34-4367-11e7-8519-9f94ee97d996",
-        "_score": null,
+        "_index": "content_2021-01-27",
+        "_type": "_doc",
+        "_id": "26b07d2a-3715-11e3-9603-00144feab7de",
+        "_score": 1.0,
         "_source": {
           "annotations": [
             {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/Topic"
-              ],
-              "apiUrl": "http://api.ft.com/things/2665a6bc-e383-3540-8c71-334aabc60c4d",
-              "directType": "http://www.ft.com/ontology/Topic",
-              "prefLabel": "EU digital single market",
-              "id": "2665a6bc-e383-3540-8c71-334aabc60c4d",
-              "type": "TOPIC",
-              "url": "https://www.ft.com/stream/2665a6bc-e383-3540-8c71-334aabc60c4d"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/Topic"
-              ],
-              "apiUrl": "http://api.ft.com/things/51649457-e3e7-3751-bf70-5f3d282bc9e4",
-              "directType": "http://www.ft.com/ontology/Topic",
-              "prefLabel": "Internet privacy",
-              "id": "51649457-e3e7-3751-bf70-5f3d282bc9e4",
-              "type": "TOPIC",
-              "url": "https://www.ft.com/stream/51649457-e3e7-3751-bf70-5f3d282bc9e4"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/organisation/Organisation"
-              ],
-              "apiUrl": "http://api.ft.com/organisations/423f0857-e5b5-3256-a8b8-857e2378f433",
-              "directType": "http://www.ft.com/ontology/organisation/Organisation",
-              "prefLabel": "European Union",
-              "id": "423f0857-e5b5-3256-a8b8-857e2378f433",
-              "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/423f0857-e5b5-3256-a8b8-857e2378f433"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/organisation/Organisation"
-              ],
-              "apiUrl": "http://api.ft.com/organisations/2c563220-391b-3ecd-bb41-d54ac542c872",
-              "directType": "http://www.ft.com/ontology/organisation/Organisation",
-              "prefLabel": "ZEIT ONLINE GmbH",
-              "id": "2c563220-391b-3ecd-bb41-d54ac542c872",
-              "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/2c563220-391b-3ecd-bb41-d54ac542c872"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/classification/Classification",
-                "http://www.ft.com/ontology/Section"
-              ],
-              "apiUrl": "http://api.ft.com/things/3cd493ab-5648-3166-addc-69e9591c9843",
-              "directType": "http://www.ft.com/ontology/Section",
-              "prefLabel": "Europe",
-              "id": "3cd493ab-5648-3166-addc-69e9591c9843",
-              "type": "SECTION",
-              "url": "https://www.ft.com/stream/3cd493ab-5648-3166-addc-69e9591c9843"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/classification/isPrimarilyClassifiedBy",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/classification/Classification",
-                "http://www.ft.com/ontology/Section"
-              ],
-              "apiUrl": "http://api.ft.com/things/1ddb5be2-a098-38e0-b510-e37bf4f494b1",
-              "directType": "http://www.ft.com/ontology/Section",
-              "prefLabel": "Media",
-              "id": "1ddb5be2-a098-38e0-b510-e37bf4f494b1",
-              "type": "SECTION",
-              "url": "https://www.ft.com/stream/1ddb5be2-a098-38e0-b510-e37bf4f494b1"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/classification/Classification",
-                "http://www.ft.com/ontology/Section"
-              ],
-              "apiUrl": "http://api.ft.com/things/10445659-5133-3551-b27a-371f7ae449b5",
-              "directType": "http://www.ft.com/ontology/Section",
-              "prefLabel": "European Companies",
-              "id": "10445659-5133-3551-b27a-371f7ae449b5",
-              "type": "SECTION",
-              "url": "https://www.ft.com/stream/10445659-5133-3551-b27a-371f7ae449b5"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/organisation/Organisation"
-              ],
-              "apiUrl": "http://api.ft.com/organisations/21715af3-3c85-3134-9fb8-8e688a0f8985",
-              "directType": "http://www.ft.com/ontology/organisation/Organisation",
-              "prefLabel": "Associated Newspapers Ltd.",
-              "id": "21715af3-3c85-3134-9fb8-8e688a0f8985",
-              "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/21715af3-3c85-3134-9fb8-8e688a0f8985"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
+              "predicate": "http://www.ft.com/ontology/annotation/about",
               "types": [
                 "http://www.ft.com/ontology/core/Thing",
                 "http://www.ft.com/ontology/concept/Concept",
@@ -141,18 +30,143 @@
                 "http://www.ft.com/ontology/company/Company",
                 "http://www.ft.com/ontology/company/PublicCompany"
               ],
-              "apiUrl": "http://api.ft.com/organisations/a845f747-276b-3435-aa0e-98c436676246",
+              "apiUrl": "http://api.ft.com/organisations/80871faa-d16f-4c9f-b310-df42104dcecc",
               "directType": "http://www.ft.com/ontology/company/PublicCompany",
-              "prefLabel": "Daily Mail & General Trust Plc",
-              "attributes": [
-                {
-                  "value": "BBG000BDDZY9",
-                  "key": "FIGI"
-                }
-              ],
-              "id": "a845f747-276b-3435-aa0e-98c436676246",
+              "FIGI": "BBG000DZG349",
+              "prefLabel": "Rio Tinto PLC",
+              "preposition": "on",
+              "id": "80871faa-d16f-4c9f-b310-df42104dcecc",
               "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/a845f747-276b-3435-aa0e-98c436676246"
+              "relativeUrl": "/stream/80871faa-d16f-4c9f-b310-df42104dcecc",
+              "url": "https://www.ft.com/stream/80871faa-d16f-4c9f-b310-df42104dcecc"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/organisation/Organisation"
+              ],
+              "apiUrl": "http://api.ft.com/organisations/f90747af-9632-4bd3-9082-1454e58dd86f",
+              "directType": "http://www.ft.com/ontology/organisation/Organisation",
+              "prefLabel": "BSG Resources Ltd",
+              "preposition": "on",
+              "id": "f90747af-9632-4bd3-9082-1454e58dd86f",
+              "type": "ORGANISATION",
+              "relativeUrl": "/stream/f90747af-9632-4bd3-9082-1454e58dd86f",
+              "url": "https://www.ft.com/stream/f90747af-9632-4bd3-9082-1454e58dd86f"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/5216ff2e-a6ed-42b2-a613-109fc6491ba2",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Energy sector",
+              "preposition": "on",
+              "id": "5216ff2e-a6ed-42b2-a613-109fc6491ba2",
+              "type": "TOPIC",
+              "relativeUrl": "/companies/energy",
+              "url": "https://www.ft.com/companies/energy"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/c47f4dfc-6879-4e95-accf-ca8cbe6a1f69",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Companies",
+              "preposition": "on",
+              "id": "c47f4dfc-6879-4e95-accf-ca8cbe6a1f69",
+              "type": "TOPIC",
+              "relativeUrl": "/companies",
+              "url": "https://www.ft.com/companies"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/5f93fe95-f487-4aba-abce-39e7d783047d",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Americas companies",
+              "preposition": "on",
+              "id": "5f93fe95-f487-4aba-abce-39e7d783047d",
+              "type": "TOPIC",
+              "relativeUrl": "/companies/americas",
+              "url": "https://www.ft.com/companies/americas"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/97133bf5-c958-4c69-9e0e-44874679cedc",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Asia-Pacific companies",
+              "preposition": "on",
+              "id": "97133bf5-c958-4c69-9e0e-44874679cedc",
+              "type": "TOPIC",
+              "relativeUrl": "/companies/asia-pacific",
+              "url": "https://www.ft.com/companies/asia-pacific"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/f95dd6f8-9ab9-407f-b8b3-9239815216b5",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Mining",
+              "preposition": "on",
+              "id": "f95dd6f8-9ab9-407f-b8b3-9239815216b5",
+              "type": "TOPIC",
+              "relativeUrl": "/companies/mining",
+              "url": "https://www.ft.com/companies/mining"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/9d13b836-df76-4445-b599-10ae378680f0",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "Mergers & Acquisitions",
+              "preposition": "on",
+              "id": "9d13b836-df76-4445-b599-10ae378680f0",
+              "type": "TOPIC",
+              "relativeUrl": "/mergers-acquisitions",
+              "url": "https://www.ft.com/mergers-acquisitions"
+            },
+            {
+              "predicate": "http://www.ft.com/ontology/annotation/about",
+              "types": [
+                "http://www.ft.com/ontology/core/Thing",
+                "http://www.ft.com/ontology/concept/Concept",
+                "http://www.ft.com/ontology/Topic"
+              ],
+              "apiUrl": "http://api.ft.com/things/6bade25b-56b3-4409-8d32-c131666d9acb",
+              "directType": "http://www.ft.com/ontology/Topic",
+              "prefLabel": "UK companies",
+              "preposition": "on",
+              "id": "6bade25b-56b3-4409-8d32-c131666d9acb",
+              "type": "TOPIC",
+              "relativeUrl": "/companies/uk",
+              "url": "https://www.ft.com/companies/uk"
             },
             {
               "predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
@@ -162,117 +176,65 @@
                 "http://www.ft.com/ontology/classification/Classification",
                 "http://www.ft.com/ontology/Genre"
               ],
-              "apiUrl": "http://api.ft.com/things/9b40e89c-e87b-3d4f-b72c-2cf7511d2146",
+              "apiUrl": "http://api.ft.com/things/a579350c-61ce-4c00-97ca-ddaa2e0cacf6",
               "directType": "http://www.ft.com/ontology/Genre",
               "prefLabel": "News",
-              "id": "9b40e89c-e87b-3d4f-b72c-2cf7511d2146",
+              "preposition": "",
+              "id": "a579350c-61ce-4c00-97ca-ddaa2e0cacf6",
               "type": "GENRE",
-              "url": "https://www.ft.com/stream/9b40e89c-e87b-3d4f-b72c-2cf7511d2146"
+              "relativeUrl": "/stream/a579350c-61ce-4c00-97ca-ddaa2e0cacf6",
+              "url": "https://www.ft.com/stream/a579350c-61ce-4c00-97ca-ddaa2e0cacf6"
             },
             {
               "predicate": "http://www.ft.com/ontology/annotation/about",
               "types": [
                 "http://www.ft.com/ontology/core/Thing",
                 "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/Topic"
+                "http://www.ft.com/ontology/Location"
               ],
-              "apiUrl": "http://api.ft.com/things/b2708390-ac5c-3592-9ab2-b0d09c40398d",
-              "directType": "http://www.ft.com/ontology/Topic",
-              "prefLabel": "Advertising",
-              "id": "b2708390-ac5c-3592-9ab2-b0d09c40398d",
-              "type": "TOPIC",
-              "url": "https://www.ft.com/stream/b2708390-ac5c-3592-9ab2-b0d09c40398d"
+              "apiUrl": "http://api.ft.com/things/01dcc40b-8099-35f2-adbf-637c9b7b160b",
+              "directType": "http://www.ft.com/ontology/Location",
+              "prefLabel": "Simandou",
+              "preposition": "on",
+              "id": "01dcc40b-8099-35f2-adbf-637c9b7b160b",
+              "type": "LOCATION",
+              "relativeUrl": "/stream/01dcc40b-8099-35f2-adbf-637c9b7b160b",
+              "url": "https://www.ft.com/stream/01dcc40b-8099-35f2-adbf-637c9b7b160b"
             },
             {
-              "predicate": "http://www.ft.com/ontology/classification/isClassifiedBy",
+              "predicate": "http://www.ft.com/ontology/annotation/about",
               "types": [
                 "http://www.ft.com/ontology/core/Thing",
                 "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/classification/Classification",
-                "http://www.ft.com/ontology/Section"
+                "http://www.ft.com/ontology/Location"
               ],
-              "apiUrl": "http://api.ft.com/things/852939c8-859c-361e-8514-f82f6c041580",
-              "directType": "http://www.ft.com/ontology/Section",
-              "prefLabel": "Companies",
-              "id": "852939c8-859c-361e-8514-f82f6c041580",
-              "type": "SECTION",
-              "url": "https://www.ft.com/stream/852939c8-859c-361e-8514-f82f6c041580"
+              "apiUrl": "http://api.ft.com/things/0236bde5-98d7-3dd6-8819-e0bc25124595",
+              "directType": "http://www.ft.com/ontology/Location",
+              "prefLabel": "Guinea",
+              "preposition": "on",
+              "id": "0236bde5-98d7-3dd6-8819-e0bc25124595",
+              "type": "LOCATION",
+              "relativeUrl": "/stream/0236bde5-98d7-3dd6-8819-e0bc25124595",
+              "url": "https://www.ft.com/stream/0236bde5-98d7-3dd6-8819-e0bc25124595"
             },
             {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/Topic"
-              ],
-              "apiUrl": "http://api.ft.com/things/9151841f-0686-3531-9486-f89ade98a65d",
-              "directType": "http://www.ft.com/ontology/Topic",
-              "prefLabel": "EU business regulation",
-              "id": "9151841f-0686-3531-9486-f89ade98a65d",
-              "type": "TOPIC",
-              "url": "https://www.ft.com/stream/9151841f-0686-3531-9486-f89ade98a65d"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
+              "predicate": "http://www.ft.com/ontology/implicitlyAbout",
               "types": [
                 "http://www.ft.com/ontology/core/Thing",
                 "http://www.ft.com/ontology/concept/Concept",
                 "http://www.ft.com/ontology/Topic"
               ],
-              "apiUrl": "http://api.ft.com/things/ce93225f-bb29-3a4f-936a-f852dfe740da",
+              "apiUrl": "http://api.ft.com/things/67fb70ae-b970-4bd1-92ea-761618ae8cb7",
               "directType": "http://www.ft.com/ontology/Topic",
-              "prefLabel": "Data protection",
-              "id": "ce93225f-bb29-3a4f-936a-f852dfe740da",
+              "prefLabel": "Natural resources",
+              "preposition": "on",
+              "id": "67fb70ae-b970-4bd1-92ea-761618ae8cb7",
               "type": "TOPIC",
-              "url": "https://www.ft.com/stream/ce93225f-bb29-3a4f-936a-f852dfe740da"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/organisation/Organisation"
-              ],
-              "apiUrl": "http://api.ft.com/organisations/1b4b842d-8bae-3b78-9c50-5a7a0d60e2ef",
-              "directType": "http://www.ft.com/ontology/organisation/Organisation",
-              "prefLabel": "Le Monde Du Regard SAS",
-              "id": "1b4b842d-8bae-3b78-9c50-5a7a0d60e2ef",
-              "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/1b4b842d-8bae-3b78-9c50-5a7a0d60e2ef"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/majorMentions",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/organisation/Organisation"
-              ],
-              "apiUrl": "http://api.ft.com/organisations/73cc33b5-d0cb-3815-8347-bc49e1ddbd5c",
-              "directType": "http://www.ft.com/ontology/organisation/Organisation",
-              "prefLabel": "The Financial Times Ltd.",
-              "id": "73cc33b5-d0cb-3815-8347-bc49e1ddbd5c",
-              "type": "ORGANISATION",
-              "url": "https://www.ft.com/stream/73cc33b5-d0cb-3815-8347-bc49e1ddbd5c"
-            },
-            {
-              "predicate": "http://www.ft.com/ontology/annotation/hasAuthor",
-              "types": [
-                "http://www.ft.com/ontology/core/Thing",
-                "http://www.ft.com/ontology/concept/Concept",
-                "http://www.ft.com/ontology/person/Person"
-              ],
-              "apiUrl": "http://api.ft.com/people/81fbe64c-155d-3e74-bb40-c6fe829f4d7e",
-              "directType": "http://www.ft.com/ontology/person/Person",
-              "prefLabel": "David Bond",
-              "id": "81fbe64c-155d-3e74-bb40-c6fe829f4d7e",
-              "type": "PERSON",
-              "url": "https://www.ft.com/stream/81fbe64c-155d-3e74-bb40-c6fe829f4d7e"
+              "relativeUrl": "/natural-resources",
+              "url": "https://www.ft.com/natural-resources"
             }
           ]
-        },
-        "sort": [
-          1495983520000
-        ]
+        }
       }
     ]
   }

@@ -18,8 +18,8 @@ describe('Search', () => {
 			const from = 10;
 			const size = 20;
 
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search', (body) => {
 					return body.from === from && body.size === size;
 				})
 				.reply(200, fixtureWithResults);
@@ -30,8 +30,8 @@ describe('Search', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search', (body) => {
 					return body._source === source;
 				})
 				.reply(200, fixtureWithResults);
@@ -42,8 +42,8 @@ describe('Search', () => {
 
 	context('Response - with results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(200, fixtureWithResults);
 		});
 
@@ -56,7 +56,7 @@ describe('Search', () => {
 
 		it('returns the total', () => (
 			subject().then((result) => {
-				expect(result.total).to.equal(fixtureWithResults.hits.total);
+				expect(result.total).to.equal(fixtureWithResults.hits.total.value);
 			})
 		));
 
@@ -71,8 +71,8 @@ describe('Search', () => {
 
 	context('Response - no results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(200, fixtureNoResults);
 		});
 
@@ -91,8 +91,8 @@ describe('Search', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_search')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_search')
 				.reply(400, fixtureError);
 		});
 

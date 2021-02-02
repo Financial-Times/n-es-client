@@ -18,8 +18,8 @@ describe('Count', () => {
 				}
 			};
 
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_count', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_count', (body) => {
 					return body.query.term['metadata.idV1'] === 'Ng==-U2VjdGlvbnM=';
 				})
 				.reply(200, fixture);
@@ -30,8 +30,8 @@ describe('Count', () => {
 
 	context('Response - success', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_count')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_count')
 				.reply(200, fixture);
 		});
 
@@ -45,8 +45,8 @@ describe('Count', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_count')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_count')
 				.reply(500);
 		});
 
