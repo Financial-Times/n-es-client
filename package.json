@@ -23,7 +23,7 @@
     "snyk": "^1.167.2"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": "12.x"
   },
   "scripts": {
     "prepare": "npx snyk protect || npx snyk protect -d || true"
