@@ -16,8 +16,8 @@ describe('Multi get', () => {
 		it('accepts an IDs parameter', () => {
 			const ids = [123, 456, 789];
 
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_mget', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_mget', (body) => {
 					return body.ids.every((id, i) => id === ids[i]);
 				})
 				.reply(200, fixtureWithResults);
@@ -28,8 +28,8 @@ describe('Multi get', () => {
 		it('accepts a source parameter', () => {
 			const source = 'id,title';
 
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_mget', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_mget', (body) => {
 					return body._source === source;
 				})
 				.reply(200, fixtureWithResults);
@@ -40,8 +40,8 @@ describe('Multi get', () => {
 
 	context('Response - with results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_mget')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_mget')
 				.reply(200, fixtureWithResults);
 		});
 
@@ -63,8 +63,8 @@ describe('Multi get', () => {
 
 	context('Response - no results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_mget')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_mget')
 				.reply(200, fixtureNoResults);
 		});
 
@@ -83,8 +83,8 @@ describe('Multi get', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_mget')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_mget')
 				.reply(500);
 		});
 

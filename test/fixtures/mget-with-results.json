@@ -1,55 +1,63 @@
 {
   "docs": [
     {
-      "_index": "content_2017-03-22",
-      "_type": "item",
-      "_id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-      "_version": 5,
+      "_index": "content_2021-01-27",
+      "_type": "_doc",
+      "_id": "9ef3a1c5-328c-460d-9261-33ea991cae62",
+      "_version": 12,
+      "_seq_no": 1537991,
+      "_primary_term": 1,
       "found": true,
       "_source": {
-        "id": "af1f01be-1564-11e7-b0c1-37e417ee6c76",
-        "publishedDate": "2017-03-30T17:28:35.000Z",
-        "title": "Pupils from wealthy homes tend to earn more",
-        "url": "https://www.ft.com/content/af1f01be-1564-11e7-b0c1-37e417ee6c76"
+        "id": "9ef3a1c5-328c-460d-9261-33ea991cae62",
+        "publishedDate": "2021-02-19T10:43:02.503Z",
+        "title": "Uber loses landmark UK battle as Supreme Court rules drivers are workers",
+        "url": "https://www.ft.com/content/9ef3a1c5-328c-460d-9261-33ea991cae62"
       }
     },
     {
-      "_index": "content_2017-03-22",
-      "_type": "item",
-      "_id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-      "_version": 11,
+      "_index": "content_2021-01-27",
+      "_type": "_doc",
+      "_id": "02ecd3cc-40ee-4712-ae9a-d9b41427d6e9",
+      "_version": 2,
+      "_seq_no": 1508810,
+      "_primary_term": 1,
       "found": true,
       "_source": {
-        "id": "803d0c6e-153d-11e7-b0c1-37e417ee6c76",
-        "publishedDate": "2017-03-30T17:17:42.000Z",
-        "title": "Trump’s leap backwards to the smoggy age of coal",
-        "url": "https://www.ft.com/content/803d0c6e-153d-11e7-b0c1-37e417ee6c76"
+        "id": "02ecd3cc-40ee-4712-ae9a-d9b41427d6e9",
+        "publishedDate": "2021-02-19T03:01:31.191Z",
+        "title": "China’s clampdown on Jack Ma’s Ant boosts rivals",
+        "url": "https://www.ft.com/content/02ecd3cc-40ee-4712-ae9a-d9b41427d6e9"
       }
     },
     {
-      "_index": "content_2017-03-22",
-      "_type": "item",
-      "_id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-      "_version": 10,
+      "_index": "content_2021-01-27",
+      "_type": "_doc",
+      "_id": "f5c8f565-3463-4a18-b64b-24075d83ad57",
+      "_version": 9,
+      "_seq_no": 1536278,
+      "_primary_term": 1,
       "found": true,
       "_source": {
-        "id": "2690a2d8-148f-11e7-80f4-13e067d5072c",
-        "publishedDate": "2017-03-30T17:15:42.000Z",
-        "title": "Political risk stalks booming Silicon Valley",
-        "url": "https://www.ft.com/content/2690a2d8-148f-11e7-80f4-13e067d5072c"
+        "id": "f5c8f565-3463-4a18-b64b-24075d83ad57",
+        "publishedDate": "2021-02-19T09:51:07.881Z",
+        "title": "G7 leaders put spotlight on vaccine donations to developing world",
+        "url": "https://www.ft.com/content/f5c8f565-3463-4a18-b64b-24075d83ad57"
       }
     },
     {
-      "_index": "content_2017-03-22",
-      "_type": "item",
-      "_id": "6b032668-155f-11e7-80f4-13e067d5072c",
-      "_version": 8,
+      "_index": "content_2021-01-27",
+      "_type": "_doc",
+      "_id": "e1a526ba-f1c8-45df-88f1-9aa32fa4af3e",
+      "_version": 19,
+      "_seq_no": 1536599,
+      "_primary_term": 1,
       "found": true,
       "_source": {
-        "id": "6b032668-155f-11e7-80f4-13e067d5072c",
-        "publishedDate": "2017-03-30T17:12:40.000Z",
-        "title": "VW agrees to pay additional $157m to settle environmental claims",
-        "url": "https://www.ft.com/content/6b032668-155f-11e7-80f4-13e067d5072c"
+        "id": "e1a526ba-f1c8-45df-88f1-9aa32fa4af3e",
+        "publishedDate": "2021-02-19T10:00:46.532Z",
+        "title": "British retail sales fall sharply and more than expected in January ",
+        "url": "https://www.ft.com/content/e1a526ba-f1c8-45df-88f1-9aa32fa4af3e"
       }
     }
   ]

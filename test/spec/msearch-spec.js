@@ -15,8 +15,8 @@ describe('msearch', () => {
 
 	context('With options', () => {
 		it('formats each header and query onto a line', () => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_msearch', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_msearch', (body) => {
 					const lines = body.split(/\n/).map(JSON.parse);
 
 					expect(lines.length).to.equal(4);
@@ -32,8 +32,8 @@ describe('msearch', () => {
 		});
 
 		it('sets defaults for each query', () => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_msearch', (body) => {
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_msearch', (body) => {
 					const lines = body.split(/\n/).map(JSON.parse);
 
 					expect(lines[1]).to.include.keys('query', 'from', 'size', 'sort');
@@ -52,8 +52,8 @@ describe('msearch', () => {
 
 	context('Response - with results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_msearch')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_msearch')
 				.reply(200, fixtureWithResults);
 		});
 
@@ -76,7 +76,7 @@ describe('msearch', () => {
 			subject().then((result) => {
 				result.forEach((item, i) => {
 					const fixtureResponse = fixtureWithResults.responses[i];
-					expect(item.total).to.equal(fixtureResponse.hits.total);
+					expect(item.total).to.equal(fixtureResponse.hits.total.value);
 				});
 			})
 		));
@@ -94,8 +94,8 @@ describe('msearch', () => {
 
 	context('Response - no results', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_msearch')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_msearch')
 				.reply(200, fixtureNoResults);
 		});
 
@@ -116,8 +116,8 @@ describe('msearch', () => {
 
 	context('Response - error', () => {
 		beforeEach(() => {
-			nock('https://next-elasticsearch.nlb.ft.com')
-				.post('/content/item/_msearch')
+			nock('https://next-elasticsearch-v7.gslb.ft.com')
+				.post('/content/_msearch')
 				.reply(400, fixtureError);
 		});
 
