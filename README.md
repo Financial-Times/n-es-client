@@ -1,6 +1,6 @@
 # n-es-client
 
-[![CircleCI](https://img.shields.io/circleci/project/github/Financial-Times/n-es-client/master.svg)](https://circleci.com/gh/Financial-Times/n-es-client) ![Coveralls Coverage](https://img.shields.io/coveralls/github/Financial-Times/n-es-client/master.svg) [![NPM version](https://img.shields.io/npm/v/@financial-times/n-es-client.svg)](https://www.npmjs.com/package/@financial-times/n-es-client)
+[![CircleCI](https://img.shields.io/circleci/project/github/Financial-Times/n-es-client/main.svg)](https://circleci.com/gh/Financial-Times/n-es-client) ![Coveralls Coverage](https://img.shields.io/coveralls/github/Financial-Times/n-es-client/main.svg) [![NPM version](https://img.shields.io/npm/v/@financial-times/n-es-client.svg)](https://www.npmjs.com/package/@financial-times/n-es-client)
 
 A very thin wrapper around [signed fetch][1] and [http-errors][2] to search and retrieve content from our Elasticsearch clusters in a simple, DRY manner.
 
