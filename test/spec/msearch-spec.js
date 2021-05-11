@@ -17,7 +17,7 @@ describe('msearch', () => {
 		it('formats each header and query onto a line', () => {
 			nock('https://next-elasticsearch-v7.gslb.ft.com')
 				.post('/content/_msearch', (body) => {
-					const lines = body.split(/\n/).map(JSON.parse);
+					const lines = body.split(/\n/).filter(Boolean).map(JSON.parse);
 
 					expect(lines.length).to.equal(4);
 
@@ -34,7 +34,7 @@ describe('msearch', () => {
 		it('sets defaults for each query', () => {
 			nock('https://next-elasticsearch-v7.gslb.ft.com')
 				.post('/content/_msearch', (body) => {
-					const lines = body.split(/\n/).map(JSON.parse);
+					const lines = body.split(/\n/).filter(Boolean).map(JSON.parse);
 
 					expect(lines[1]).to.include.keys('query', 'from', 'size', 'sort');
 					expect(lines[3]).to.include.keys('query', 'from', 'size', 'sort');
