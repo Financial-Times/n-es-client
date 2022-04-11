@@ -165,9 +165,6 @@ workflows:
       - test:
           requires:
             - build
-      - provision:
-          requires:
-            - build
 
   nightly:
     triggers:
