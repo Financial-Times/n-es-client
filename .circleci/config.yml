@@ -153,7 +153,7 @@ workflows:
           requires:
             - test
 
-  renovate-nori-build-test-provision: 
+  renovate-nori-build-test-provision:
     jobs:
       - waiting-for-approval:
           type: approval
