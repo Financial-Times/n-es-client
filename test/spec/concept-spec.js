@@ -6,7 +6,7 @@ const subject = require('../../lib/concept');
 const fixtureFound = require('../fixtures/concept-found.json');
 const fixtureNotFound = require('../fixtures/concept-not-found.json');
 
-describe('Concept', () => {
+describe('Concept', () => { 
 	afterEach(() => {
 		nock.isDone();
 		nock.cleanAll();
