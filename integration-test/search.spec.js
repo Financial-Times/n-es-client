@@ -6,6 +6,41 @@ describe('search', () => {
 		const result = await search();
 		expect(result.length).equal(10);
 		expect(result.total).equal(10000);
-		expect(result[0].type).equal('article');
+		expect(result[0]).to.have.any.keys(
+			'id',
+			'webUrl',
+			'title',
+			'alternativeTitles',
+			'provenance',
+			'byline',
+			'publishedDate',
+			'firstPublishedDate',
+			'publishReference',
+			'bodyText',
+			'curatedRelatedContent',
+			'containedIn',
+			'canBeSyndicated',
+			'comments',
+			'standout',
+			'realtime',
+			'originatingParty',
+			'_lastUpdatedDateTime',
+			'_lastUpdatedVersion',
+			'type',
+			'subtype',
+			'accessLevel',
+			'url',
+			'attachments',
+			'relativeUrl',
+			'bodyHTML',
+			'mainImage',
+			'annotations',
+			'brandConcept',
+			'authorConcepts',
+			'design',
+			'displayConcept',
+			'durationMinutes',
+			'teaser'
+		);
 	});
 });
