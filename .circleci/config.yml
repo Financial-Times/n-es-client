@@ -61,7 +61,7 @@ references:
     branches:
       only: /(^renovate-.*|^nori/.*)/
 
-  filters_ignore_main_tags_renovate_nori: &filters_ignore_main_tags_renovate_nori
+  filters_ignore_tags_renovate_nori_main: &filters_ignore_tags_renovate_nori_main
     tags:
       ignore: /.*/
     branches:
@@ -145,16 +145,34 @@ workflows:
   build-test:
     jobs:
       - build:
+          name: build-no-main-v<< matrix.node-version >>
           filters:
-            <<: *filters_ignore_main_tags_renovate_nori
-          name: build-v<< matrix.node-version >>
+            <<: *filters_ignore_tags_renovate_nori_main
           matrix:
             parameters:
               node-version: [ "16.14", "14.19" ]
       - test:
+          name : test-no-main-v<< matrix.node-version >>
           requires:
-            - build-v<< matrix.node-version >>
-          name: test-v<< matrix.node-version >>
+            - build-no-main-v<< matrix.node-version >>
+          matrix:
+            parameters:
+              node-version: [ "16.14", "14.19" ]
+      - wait-for-approval:
+          type: approval
+          filters:
+            <<: *filters_only_renovate_nori
+      - build:
+          name: build-renovate-v<< matrix.node-version >>
+          requires:
+            - wait-for-approval
+          matrix:
+            parameters:
+              node-version: [ "16.14", "14.19" ]
+      - test:
+          name : test-renovate-v<< matrix.node-version >>
+          requires:
+            - build-renovate-v<< matrix.node-version >>
           matrix:
             parameters:
               node-version: [ "16.14", "14.19" ]
@@ -183,19 +201,6 @@ workflows:
             <<: *filters_version_tag
           requires:
             - test-v16.14
-
-  renovate-nori-build-test-provision:
-    jobs:
-      - waiting-for-approval:
-          type: approval
-          filters:
-            <<: *filters_only_renovate_nori
-      - build:
-          requires:
-            - waiting-for-approval
-      - test:
-          requires:
-            - build
 
   nightly:
     triggers:
