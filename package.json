@@ -1,50 +1,45 @@
 {
-	"name": "@financial-times/n-es-client",
-	"version": "0.0.0",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:Financial-Times/n-es-client.git"
-	},
-	"homepage": "https://github.com/Financial-Times/n-es-client",
-	"dependencies": {
-	  "@aws-crypto/sha256-browser": "^2.0.1",
-	  "@aws-sdk/protocol-http": "^3.58.0",
-	  "@aws-sdk/signature-v4": "^3.58.0",
-	  "@financial-times/n-logger": "^6.0.0",
-	  "http-errors": "^1.8.0",
-	  "lodash": "^4.17.21",
-	  "node-fetch": "^2.6.7"
-	},
-	"devDependencies": {
-	  "@financial-times/n-gage": "^8.3.2",
-	  "chai": "^4.1.0",
-	  "check-engine": "^1.10.1",
-	  "coveralls": "^3.0.0",
-	  "husky": "^7.0.4",
-	  "mocha": "^6.0.0",
-	  "nock": "^11.0.0",
-	  "nyc": "^11.8.0",
-	  "sinon": "^5.0.0",
-	  "snyk": "^1.167.2"
-	},
-	"engines": {
-	  "node": "14.x || 16.x",
-	  "npm": "7.x || 8.x"
-	},
-	"scripts": {
-	  "prepare": "npx snyk protect || npx snyk protect -d || true",
-	  "preinstall": "[ \"$INIT_CWD\" != \"$PWD\" ] || npm_config_yes=true npx check-engine"
-	},
-	"husky": {
-	  "hooks": {
-		"commit-msg": "node_modules/.bin/secret-squirrel-commitmsg",
-		"pre-commit": "node_modules/.bin/secret-squirrel",
-		"pre-push": "make verify -j3"
-	  }
-	},
-	"volta": {
-	  "node": "16.14.2"
-	}
+  "name": "@financial-times/n-es-client",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Financial-Times/n-es-client.git"
+  },
+  "homepage": "https://github.com/Financial-Times/n-es-client",
+  "dependencies": {
+    "@financial-times/n-logger": "^6.0.0",
+    "http-errors": "^1.8.0",
+    "signed-aws-es-fetch": "^1.4.0"
+  },
+  "devDependencies": {
+    "@financial-times/n-gage": "^8.3.2",
+    "chai": "^4.1.0",
+    "check-engine": "^1.10.1",
+    "coveralls": "^3.0.0",
+    "husky": "^7.0.4",
+    "mocha": "^6.0.0",
+    "nock": "^11.0.0",
+    "nyc": "^11.8.0",
+    "sinon": "^5.0.0",
+    "snyk": "^1.167.2"
+  },
+  "engines": {
+    "node": "14.x || 16.x",
+    "npm": "7.x || 8.x"
+  },
+  "scripts": {
+    "prepare": "npx snyk protect || npx snyk protect -d || true",
+    "preinstall": "[ \"$INIT_CWD\" != \"$PWD\" ] || npm_config_yes=true npx check-engine"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node_modules/.bin/secret-squirrel-commitmsg",
+      "pre-commit": "node_modules/.bin/secret-squirrel",
+      "pre-push": "make verify -j3"
+    }
+  },
+  "volta": {
+    "node": "16.14.2"
+  }
 }
-  
