@@ -13,7 +13,7 @@
     "signed-aws-es-fetch": "^1.4.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^8.3.2",
+    "@financial-times/n-gage": "^9.0.0",
     "chai": "^4.1.0",
     "check-engine": "^1.10.1",
     "coveralls": "^3.0.0",
