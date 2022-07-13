@@ -12,17 +12,15 @@ describe('Get', () => {
 	});
 
 	context('With options', () => {
-		beforeEach(() => {
+		it('accepts a source parameter', () => {
 			nock('https://next-elasticsearch-v7.gslb.ft.com')
 				.get(`/content/_doc/${fixture.id}/_source`)
 				.query((params) => {
 					return params._source === 'id,title';
 				})
 				.reply(200, fixture);
-		});
-		it('accepts a source parameter', async () => {
-			const result = await subject(fixture.id, { _source: ['id', 'title'] });
-			expect(result).to.deep.equal(fixture);
+
+			return subject(fixture.id, { _source: ['id', 'title'] });
 		});
 	});
 
@@ -34,10 +32,11 @@ describe('Get', () => {
 				.reply(200, fixture);
 		});
 
-		it('returns an object', () =>
+		it('returns an object', () => (
 			subject(fixture.id).then((result) => {
 				expect(result).to.be.an('object');
-			}));
+			})
+		));
 	});
 
 	context('Response - not found', () => {
@@ -48,7 +47,7 @@ describe('Get', () => {
 				.reply(404);
 		});
 
-		it('throws an HTTP error', () =>
+		it('throws an HTTP error', () => (
 			subject(fixture.id)
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -56,6 +55,7 @@ describe('Get', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('NotFoundError');
-				}));
+				})
+		));
 	});
 });

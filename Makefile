@@ -14,16 +14,11 @@ unit-test:
 unit-test-coverage:
 	nyc --reporter=$(if $(CIRCLECI),lcovonly,lcov) make unit-test
 
-integration:
-	export AWS_SIGNED_FETCH_DISABLE_DNS_RESOLUTION=false; \
-	mocha 'integration-test/*.spec.js'
-
 test:
 	make verify
 
 ifeq ($(CIRCLECI),true)
-	make unit-test-coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls; \
-	make integration;
+	make unit-test-coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
 else
 	make unit-test
 endif
