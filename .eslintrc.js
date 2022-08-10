@@ -3,6 +3,7 @@ module.exports = {
 	extends: [
 		'@financial-times/eslint-config-next',
 		'plugin:json/recommended',
-		'plugin:yml/standard'
+		'plugin:yml/standard',
+		'prettier'
 	]
 };
