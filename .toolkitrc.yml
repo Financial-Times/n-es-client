@@ -1,0 +1,11 @@
+plugins:
+  - '@dotcom-tool-kit/circleci'
+  - '@dotcom-tool-kit/npm'
+  - '@dotcom-tool-kit/circleci-npm'
+  - '@dotcom-tool-kit/mocha'
+hooks: {}
+options:
+  "@dotcom-tool-kit/mocha":
+    configPath: ".mocharc.json"
+    files: "test/**/*-spec.js"
+  
