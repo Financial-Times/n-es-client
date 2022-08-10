@@ -10,6 +10,30 @@ jobs:
       - checkout
       - tool-kit/persist-workspace:
           path: .
+  testci-coverage:
+    executor:
+      name: node/default
+      tag: <<parameters.node-version>>
+    parameters:
+      node-version:
+        default: "16.14"
+        type: string
+    steps:
+      - tool-kit/attach-workspace
+      - run:
+          name: Run tests coverage
+          command: "npm run coverage"
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/results.xml # TODO change depending on which test plugin is running? or actually, move this into the plugin? or do it as tool kit config. hmm
+            MOCHA_FILE: test-results/mocha/results.xml
+      - run:
+          name: output coverage report
+          command: "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: test-results
 workflows:
   version: 2
   tool-kit:
@@ -51,11 +75,19 @@ workflows:
           filters:
             tags:
               only: /^v\d+\.\d+\.\d+(-.+)?/
+      - testci-coverage:
+          node-version: 16.14-browsers
+          requires:
+            - tool-kit/build
+          filters:
+            tags:
+              only: /^v\d+\.\d+\.\d+(-.+)?/
       - tool-kit/publish:
           node-version: 16.14-browsers
           context: npm-publish-token
           requires:
             - tool-kit/test
+            - testci-coverage
           filters:
             branches:
               ignore: /.*/
