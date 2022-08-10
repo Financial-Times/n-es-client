@@ -51,7 +51,7 @@
 		"precommit": "secret-squirrel && npm run format && npm run fix",
 		"prepush": "npm run test",
 		"format": "dotcom-tool-kit format:local",
-    "coverage": "nyc --reporter=lcovonly mocha --config=.mocharc.json"
+		"coverage": "nyc --reporter=lcovonly mocha --config=.mocharc.json"
 	},
 	"husky": {
 		"hooks": {
