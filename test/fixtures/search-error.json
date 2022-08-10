@@ -1,21 +1,21 @@
 {
-  "error": {
-    "root_cause": [
-      {
-        "type": "parsing_exception",
-        "reason": "unknown query [filtered]",
-        "line": 3,
-        "col": 14
-      }
-    ],
-    "type": "parsing_exception",
-    "reason": "unknown query [filtered]",
-    "line": 3,
-    "col": 14,
-    "caused_by": {
-      "type": "named_object_not_found_exception",
-      "reason": "[3:14] unknown field [filtered]"
-    }
-  },
-  "status": 400
+	"error": {
+		"root_cause": [
+			{
+				"type": "parsing_exception",
+				"reason": "unknown query [filtered]",
+				"line": 3,
+				"col": 14
+			}
+		],
+		"type": "parsing_exception",
+		"reason": "unknown query [filtered]",
+		"line": 3,
+		"col": 14,
+		"caused_by": {
+			"type": "named_object_not_found_exception",
+			"reason": "[3:14] unknown field [filtered]"
+		}
+	},
+	"status": 400
 }

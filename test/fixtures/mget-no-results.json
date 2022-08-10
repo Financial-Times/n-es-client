@@ -1,28 +1,28 @@
 {
-  "docs": [
-    {
-      "_index": "content_2021-01-27",
-      "_type": "_doc",
-      "_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
-      "found": false
-    },
-    {
-      "_index": "content_2021-01-27",
-      "_type": "_doc",
-      "_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
-      "found": false
-    },
-    {
-      "_index": "content_2021-01-27",
-      "_type": "_doc",
-      "_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
-      "found": false
-    },
-    {
-      "_index": "content_2021-01-27",
-      "_type": "_doc",
-      "_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
-      "found": false
-    }
-  ]
+	"docs": [
+		{
+			"_index": "content_2021-01-27",
+			"_type": "_doc",
+			"_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
+			"found": false
+		},
+		{
+			"_index": "content_2021-01-27",
+			"_type": "_doc",
+			"_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
+			"found": false
+		},
+		{
+			"_index": "content_2021-01-27",
+			"_type": "_doc",
+			"_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
+			"found": false
+		},
+		{
+			"_index": "content_2021-01-27",
+			"_type": "_doc",
+			"_id": "ff1f01be-1564-11e7-b0c1-37e417ee6c76",
+			"found": false
+		}
+	]
 }

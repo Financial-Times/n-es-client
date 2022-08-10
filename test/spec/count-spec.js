@@ -35,12 +35,11 @@ describe('Count', () => {
 				.reply(200, fixture);
 		});
 
-		it('returns a number', () => (
+		it('returns a number', () =>
 			subject().then((result) => {
 				expect(result).to.be.a('number');
 				expect(result).to.equal(fixture.count);
-			})
-		));
+			}));
 	});
 
 	context('Response - error', () => {
@@ -50,7 +49,7 @@ describe('Count', () => {
 				.reply(500);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject()
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -58,7 +57,6 @@ describe('Count', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('InternalServerError');
-				})
-		));
+				}));
 	});
 });

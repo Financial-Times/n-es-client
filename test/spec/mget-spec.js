@@ -45,20 +45,18 @@ describe('Multi get', () => {
 				.reply(200, fixtureWithResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
 				expect(result.length).to.equal(fixtureWithResults.docs.length);
-			})
-		));
+			}));
 
-		it('returns the document source', () => (
+		it('returns the document source', () =>
 			subject().then((result) => {
 				result.forEach((doc) => {
 					expect(doc).to.include.keys('id', 'title');
 				});
-			})
-		));
+			}));
 	});
 
 	context('Response - no results', () => {
@@ -68,11 +66,10 @@ describe('Multi get', () => {
 				.reply(200, fixtureNoResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
-			})
-		));
+			}));
 
 		it('filters out not found documents', () => {
 			subject().then((result) => {
@@ -88,7 +85,7 @@ describe('Multi get', () => {
 				.reply(500);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject()
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -96,7 +93,6 @@ describe('Multi get', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('InternalServerError');
-				})
-		));
+				}));
 	});
 });

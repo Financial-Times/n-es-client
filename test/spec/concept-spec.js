@@ -21,30 +21,35 @@ describe('Concept', () => {
 				.reply(200, fixtureFound);
 		});
 
-		it('returns an object', () => (
+		it('returns an object', () =>
 			subject(id).then((result) => {
 				expect(result).to.be.an('object');
-			})
-		));
+			}));
 
-		it('finds the requested concept', () => (
+		it('finds the requested concept', () =>
 			subject(id).then((result) => {
 				expect(result.id).to.equal(id);
-			})
-		));
+			}));
 
-		it('plucks out the necessary keys', () => (
+		it('plucks out the necessary keys', () =>
 			subject(id).then((result) => {
 				// existing keys
-				expect(result).to.include.keys('id', 'prefLabel', 'apiUrl', 'url', 'types', 'type', 'directType');
+				expect(result).to.include.keys(
+					'id',
+					'prefLabel',
+					'apiUrl',
+					'url',
+					'types',
+					'type',
+					'directType'
+				);
 
 				// non existing keys
 				expect(result).to.not.include.keys('attributes');
 
 				// stripped out keys
 				expect(result).to.not.include.keys('predicate');
-			})
-		));
+			}));
 	});
 
 	context('Response - not found', () => {
@@ -56,11 +61,10 @@ describe('Concept', () => {
 				.reply(200, fixtureNotFound);
 		});
 
-		it('returns nothing', () => (
+		it('returns nothing', () =>
 			subject(id).then((result) => {
 				expect(result).to.be.undefined;
-			})
-		));
+			}));
 	});
 
 	context('Response - error', () => {
@@ -70,7 +74,7 @@ describe('Concept', () => {
 				.reply(500);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject()
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -78,7 +82,6 @@ describe('Concept', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('InternalServerError');
-				})
-		));
+				}));
 	});
 });

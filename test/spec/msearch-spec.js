@@ -25,10 +25,7 @@ describe('msearch', () => {
 				})
 				.reply(200, fixtureWithResults);
 
-			return subject([
-				{ query: 'foo' },
-				{ query: 'bar' }
-			]);
+			return subject([{ query: 'foo' }, { query: 'bar' }]);
 		});
 
 		it('sets defaults for each query', () => {
@@ -43,10 +40,7 @@ describe('msearch', () => {
 				})
 				.reply(200, fixtureWithResults);
 
-			return subject([
-				{ query: 'foo' },
-				{ query: 'bar' }
-			]);
+			return subject([{ query: 'foo' }, { query: 'bar' }]);
 		});
 	});
 
@@ -57,39 +51,35 @@ describe('msearch', () => {
 				.reply(200, fixtureWithResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
 				expect(result.length).to.equal(2);
-			})
-		));
+			}));
 
-		it('formats each set of results', () => (
+		it('formats each set of results', () =>
 			subject().then((result) => {
 				result.forEach((item) => {
 					expect(item).to.include.keys(['total', 'hits']);
 				});
-			})
-		));
+			}));
 
-		it('returns the total for each result set', () => (
+		it('returns the total for each result set', () =>
 			subject().then((result) => {
 				result.forEach((item, i) => {
 					const fixtureResponse = fixtureWithResults.responses[i];
 					expect(item.total).to.equal(fixtureResponse.hits.total.value);
 				});
-			})
-		));
+			}));
 
-		it('returns each document source', () => (
+		it('returns each document source', () =>
 			subject().then((result) => {
 				result.forEach((item) => {
 					item.hits.forEach((doc) => {
 						expect(doc).to.include.keys('title');
 					});
 				});
-			})
-		));
+			}));
 	});
 
 	context('Response - no results', () => {
@@ -99,19 +89,17 @@ describe('msearch', () => {
 				.reply(200, fixtureNoResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
-			})
-		));
+			}));
 
-		it('formats each set of results', () => (
+		it('formats each set of results', () =>
 			subject().then((result) => {
 				result.forEach((item) => {
 					expect(item).to.deep.equal({ total: 0, hits: [] });
 				});
-			})
-		));
+			}));
 	});
 
 	context('Response - error', () => {
@@ -121,7 +109,7 @@ describe('msearch', () => {
 				.reply(400, fixtureError);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject()
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -129,7 +117,6 @@ describe('msearch', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('BadRequestError');
-				})
-		));
+				}));
 	});
 });
