@@ -3,9 +3,17 @@ plugins:
   - '@dotcom-tool-kit/npm'
   - '@dotcom-tool-kit/circleci-npm'
   - '@dotcom-tool-kit/mocha'
-hooks: {}
+  - '@dotcom-tool-kit/eslint'
+hooks:
+  test:local:
+    - Eslint
+    - Mocha
+  test:ci:
+    - Eslint
+    - Mocha
 options:
-  "@dotcom-tool-kit/mocha":
-    configPath: ".mocharc.json"
-    files: "test/**/*-spec.js"
-  
+  '@dotcom-tool-kit/mocha':
+    configPath: '.mocharc.json'
+    files: 'test/**/*-spec.js'
+  '@dotcom-tool-kit/eslint':
+    files: '**/*.{js,yml,json}'
