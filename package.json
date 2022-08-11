@@ -53,12 +53,6 @@
 		"format": "dotcom-tool-kit format:local",
 		"coverage": "nyc --reporter=lcovonly mocha --config=.mocharc.json"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "npm run precommit",
-			"pre-push": "npm run prepush"
-		}
-	},
 	"volta": {
 		"node": "16.14.2"
 	}
