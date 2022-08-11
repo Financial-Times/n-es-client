@@ -46,7 +46,7 @@
 		"build": "dotcom-tool-kit build:local",
 		"test": "dotcom-tool-kit test:local",
 		"start": "dotcom-tool-kit run:local",
-		"fix:js": "eslint '**/*.{js,json,yml}' --fix",
+		"fix:js": "eslint --fix '**/*.{js,json,yml}'",
 		"fix": "npm run fix:js",
 		"precommit": "secret-squirrel && npm run format && npm run fix",
 		"prepush": "npm run test",
