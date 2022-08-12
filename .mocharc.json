@@ -1,0 +1,7 @@
+{
+    "exit" : true,
+    "extension": ["js"],
+    "package": "./package.json",
+    "spec" : ["test/**/*-spec.js"],
+    "require" : "test/hookTest.js"
+  }

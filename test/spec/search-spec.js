@@ -47,26 +47,23 @@ describe('Search', () => {
 				.reply(200, fixtureWithResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
 				expect(result.length).to.equal(fixtureWithResults.hits.hits.length);
-			})
-		));
+			}));
 
-		it('returns the total', () => (
+		it('returns the total', () =>
 			subject().then((result) => {
 				expect(result.total).to.equal(fixtureWithResults.hits.total.value);
-			})
-		));
+			}));
 
-		it('returns the document source', () => (
+		it('returns the document source', () =>
 			subject().then((result) => {
 				result.forEach((doc) => {
 					expect(doc).to.include.keys('id', 'title');
 				});
-			})
-		));
+			}));
 	});
 
 	context('Response - no results', () => {
@@ -76,17 +73,15 @@ describe('Search', () => {
 				.reply(200, fixtureNoResults);
 		});
 
-		it('returns an array', () => (
+		it('returns an array', () =>
 			subject().then((result) => {
 				expect(result).to.be.an('array');
-			})
-		));
+			}));
 
-		it('appends the total', () => (
+		it('appends the total', () =>
 			subject().then((result) => {
 				expect(result.total).to.equal(0);
-			})
-		));
+			}));
 	});
 
 	context('Response - error', () => {
@@ -96,7 +91,7 @@ describe('Search', () => {
 				.reply(400, fixtureError);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject()
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -104,7 +99,6 @@ describe('Search', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('BadRequestError');
-				})
-		));
+				}));
 	});
 });

@@ -1,81 +1,81 @@
 {
-  "took": 9,
-  "responses": [
-    {
-      "took": 7,
-      "timed_out": false,
-      "_shards": {
-        "total": 4,
-        "successful": 4,
-        "skipped": 0,
-        "failed": 0
-      },
-      "hits": {
-        "total": {
-          "value": 19258,
-          "relation": "eq"
-        },
-        "max_score": null,
-        "hits": [
-          {
-            "_index": "content_2018-09-28",
-            "_type": "item",
-            "_id": "30364c64-f150-11dc-a91a-0000779fd2ac",
-            "_score": null,
-            "_source": {
-              "title": "Iran’s elite paper over the economic cracks"
-            }
-          },
-          {
-            "_index": "content_2018-09-28",
-            "_type": "item",
-            "_id": "f3ab96be-b72e-11e7-8c12-5661783e5589",
-            "_score": null,
-            "_source": {
-              "title": "US-backed fighters take control of Syria’s largest oilfield"
-            }
-          }
-        ]
-      },
-      "status": 200
-    },
-    {
-      "took": 7,
-      "timed_out": false,
-      "_shards": {
-        "total": 4,
-        "successful": 4,
-        "skipped": 0,
-        "failed": 0
-      },
-      "hits": {
-        "total": {
-          "value": 69470,
-          "relation": "eq"
-        },
-        "max_score": null,
-        "hits": [
-          {
-            "_index": "content_2018-09-28",
-            "_type": "item",
-            "_id": "ab0cf1fa-4fbe-11e7-a1f2-db19572361bb",
-            "_score": null,
-            "_source": {
-              "title": "The battle to keep artists in the capital"
-            }
-          },
-          {
-            "_index": "content_2018-09-28",
-            "_type": "item",
-            "_id": "3ace6a68-efa9-11d9-bd3b-00000e2511c8",
-            "_score": null,
-            "_source": {
-              "title": "Melding art and industry"
-            }
-          }
-        ]
-      },
-      "status": 200
-    }
-  ]
+	"took": 9,
+	"responses": [
+		{
+			"took": 7,
+			"timed_out": false,
+			"_shards": {
+				"total": 4,
+				"successful": 4,
+				"skipped": 0,
+				"failed": 0
+			},
+			"hits": {
+				"total": {
+					"value": 19258,
+					"relation": "eq"
+				},
+				"max_score": null,
+				"hits": [
+					{
+						"_index": "content_2018-09-28",
+						"_type": "item",
+						"_id": "30364c64-f150-11dc-a91a-0000779fd2ac",
+						"_score": null,
+						"_source": {
+							"title": "Iran’s elite paper over the economic cracks"
+						}
+					},
+					{
+						"_index": "content_2018-09-28",
+						"_type": "item",
+						"_id": "f3ab96be-b72e-11e7-8c12-5661783e5589",
+						"_score": null,
+						"_source": {
+							"title": "US-backed fighters take control of Syria’s largest oilfield"
+						}
+					}
+				]
+			},
+			"status": 200
+		},
+		{
+			"took": 7,
+			"timed_out": false,
+			"_shards": {
+				"total": 4,
+				"successful": 4,
+				"skipped": 0,
+				"failed": 0
+			},
+			"hits": {
+				"total": {
+					"value": 69470,
+					"relation": "eq"
+				},
+				"max_score": null,
+				"hits": [
+					{
+						"_index": "content_2018-09-28",
+						"_type": "item",
+						"_id": "ab0cf1fa-4fbe-11e7-a1f2-db19572361bb",
+						"_score": null,
+						"_source": {
+							"title": "The battle to keep artists in the capital"
+						}
+					},
+					{
+						"_index": "content_2018-09-28",
+						"_type": "item",
+						"_id": "3ace6a68-efa9-11d9-bd3b-00000e2511c8",
+						"_score": null,
+						"_source": {
+							"title": "Melding art and industry"
+						}
+					}
+				]
+			},
+			"status": 200
+		}
+	]
 }

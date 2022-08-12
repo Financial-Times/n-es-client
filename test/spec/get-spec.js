@@ -32,11 +32,10 @@ describe('Get', () => {
 				.reply(200, fixture);
 		});
 
-		it('returns an object', () => (
+		it('returns an object', () =>
 			subject(fixture.id).then((result) => {
 				expect(result).to.be.an('object');
-			})
-		));
+			}));
 	});
 
 	context('Response - not found', () => {
@@ -47,7 +46,7 @@ describe('Get', () => {
 				.reply(404);
 		});
 
-		it('throws an HTTP error', () => (
+		it('throws an HTTP error', () =>
 			subject(fixture.id)
 				.then((result) => {
 					expect(result).to.equal('This should never run');
@@ -55,7 +54,6 @@ describe('Get', () => {
 				.catch((error) => {
 					expect(error).to.be.an('error');
 					expect(error.name).to.equal('NotFoundError');
-				})
-		));
+				}));
 	});
 });

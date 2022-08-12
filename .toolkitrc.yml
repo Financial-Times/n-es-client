@@ -1,0 +1,22 @@
+plugins:
+  - '@dotcom-tool-kit/circleci'
+  - '@dotcom-tool-kit/npm'
+  - '@dotcom-tool-kit/circleci-npm'
+  - '@dotcom-tool-kit/mocha'
+  - '@dotcom-tool-kit/eslint'
+  - '@dotcom-tool-kit/prettier'
+hooks:
+  test:local:
+    - Eslint
+    - Mocha
+  test:ci:
+    - Eslint
+    - Mocha
+options:
+  '@dotcom-tool-kit/mocha':
+    configPath: '.mocharc.json'
+    files: 'test/**/*-spec.js'
+  '@dotcom-tool-kit/eslint':
+    files: '**/*.{js,yml,json}'
+  '@dotcom-tool-kit/prettier':
+    files: '**/*.{js,yml,json}'
