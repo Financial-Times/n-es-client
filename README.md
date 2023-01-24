@@ -113,3 +113,7 @@ Get a single concept by UUID. Returns an object or `undefined` if no matches wer
 [2]: https://www.npmjs.com/package/http-errors
 [3]: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-source-filtering.html
 [4]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
+
+## Environments
+
+You can configure the Elasticsearch environment to use by setting the `N_ES_CLIENT_ENV` environment variable to either `development` or `production`. If this environment variable is not set it defaults to `production`. 
