@@ -38,7 +38,7 @@
 	},
 	"engines": {
 		"node": "14.x || 16.x",
-		"npm": "7.x || 8.x"
+		"npm": "9.x"
 	},
 	"scripts": {
 		"prepare": "npx snyk protect || npx snyk protect -d || true && husky install",
