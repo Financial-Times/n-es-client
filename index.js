@@ -1,3 +1,8 @@
+// doppler auto secret rotation requires a suffix of _ACCESS_KEY_ID, but signed-es-aws-fetch module does not have that in its list of accepted key names
+if (process.env.ES_AWS_ACCESS_KEY_ID) {
+	process.env.ES_AWS_ACCESS_KEY = process.env.ES_AWS_ACCESS_KEY_ID;
+}
+
 module.exports = {
 	search: require('./lib/search'),
 	count: require('./lib/count'),
@@ -8,8 +13,3 @@ module.exports = {
 	mapping: require('./lib/mapping'),
 	msearch: require('./lib/msearch')
 };
-
-// doppler auto secret rotation requires a suffix of _ACCESS_KEY_ID, but signed-es-aws-fetch module does not have that in its list of accepted key names
-if (process.env.ES_AWS_ACCESS_KEY_ID) {
-	process.env.ES_AWS_ACCESS_KEY = process.env.ES_AWS_ACCESS_KEY_ID;
-}
