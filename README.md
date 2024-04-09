@@ -23,6 +23,10 @@ export ES_AWS_ACCESS_KEY=123
 export ES_AWS_SECRET_ACCESS_KEY=456
 ```
 
+### Doppler compatibility
+
+Set your secret name as `ES_AWS_ACCESS_KEY_ID` for the AWS ACCESS KEY, and this library will write its value to `ES_AWS_ACCESS_KEY` so that `signed-aws-es-fetch` accepts it
+
 ## Usage
 
 All methods return a promise. If a request errors then it will be rejected with an appropriate HTTP error. Each method accepts an options object that will be preserved verbatim and sent with the request, either stringified as part of the URL or as the `POST` body.
