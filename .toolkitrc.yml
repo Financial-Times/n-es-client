@@ -20,3 +20,5 @@ options:
     files: '**/*.{js,yml,json}'
   '@dotcom-tool-kit/prettier':
     files: '**/*.{js,yml,json}'
+  '@dotcom-tool-kit/circleci':
+    nodeVersion: 18.16-browsers
