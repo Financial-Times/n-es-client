@@ -37,8 +37,8 @@
 		"snyk": "^1.167.2"
 	},
 	"engines": {
-		"node": "14.x || 16.x || 18.x",
-		"npm": "7.x || 8.x || 9.x"
+		"node": "18.x || 20.x || 22.x",
+		"npm": "9.x || 10.x"
 	},
 	"scripts": {
 		"prepare": "npx snyk protect || npx snyk protect -d || true && husky install",
@@ -54,6 +54,6 @@
 		"coverage": "nyc --reporter=lcovonly mocha --config=.mocharc.json"
 	},
 	"volta": {
-		"node": "16.14.2"
+		"node": "18.20.2"
 	}
 }
