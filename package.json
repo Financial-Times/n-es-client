@@ -10,7 +10,12 @@
 	"dependencies": {
 		"@dotcom-reliability-kit/logger": "^2.2.6",
 		"http-errors": "^1.8.0",
-		"signed-aws-es-fetch": "^1.4.0"
+		"signed-aws-es-fetch": "^1.6.0"
+	},
+	"overrides": {
+		"signed-aws-es-fetch": {
+			"node-fetch": "^2.6.1"
+		}
 	},
 	"devDependencies": {
 		"@dotcom-tool-kit/circleci": "^6.0.1",
