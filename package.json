@@ -38,15 +38,14 @@
 		"mocha": "^6.0.0",
 		"nock": "^11.0.0",
 		"nyc": "^11.8.0",
-		"sinon": "^5.0.0",
-		"snyk": "^1.167.2"
+		"sinon": "^5.0.0"
 	},
 	"engines": {
 		"node": "18.x || 20.x || 22.x",
 		"npm": "9.x || 10.x"
 	},
 	"scripts": {
-		"prepare": "npx snyk protect || npx snyk protect -d || true && husky install",
+		"prepare": "husky install",
 		"preinstall": "[ \"$INIT_CWD\" != \"$PWD\" ] || npm_config_yes=true npx check-engine",
 		"build": "dotcom-tool-kit build:local",
 		"test": "dotcom-tool-kit test:local",
