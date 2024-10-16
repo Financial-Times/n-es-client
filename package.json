@@ -27,7 +27,7 @@
 		"@financial-times/eslint-config-next": "^4.0.0",
 		"@financial-times/secret-squirrel": "^2.21.0",
 		"chai": "^4.1.0",
-		"check-engine": "^1.10.1",
+		"check-engine": "^1.14.0",
 		"coveralls": "^3.0.0",
 		"dotcom-tool-kit": "^3.4.5",
 		"eslint": "^8.21.0",
