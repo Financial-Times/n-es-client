@@ -21,7 +21,7 @@
 		"@dotcom-tool-kit/circleci": "^6.0.1",
 		"@dotcom-tool-kit/circleci-npm": "^5.3.3",
 		"@dotcom-tool-kit/eslint": "^3.2.0",
-		"@dotcom-tool-kit/mocha": "^3.2.0",
+		"@dotcom-tool-kit/mocha": "^3.2.1",
 		"@dotcom-tool-kit/npm": "^3.1.1",
 		"@dotcom-tool-kit/prettier": "^3.2.0",
 		"@financial-times/eslint-config-next": "^4.0.0",
