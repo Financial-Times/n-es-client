@@ -24,7 +24,7 @@
 		"@dotcom-tool-kit/mocha": "^3.2.1",
 		"@dotcom-tool-kit/npm": "^3.3.2",
 		"@dotcom-tool-kit/prettier": "^3.2.1",
-		"@financial-times/eslint-config-next": "^4.0.0",
+		"@financial-times/eslint-config-next": "^7.1.0",
 		"@financial-times/secret-squirrel": "^2.21.0",
 		"chai": "^4.1.0",
 		"check-engine": "^1.14.0",
