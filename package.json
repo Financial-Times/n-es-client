@@ -30,7 +30,7 @@
 		"check-engine": "^1.14.0",
 		"coveralls": "^3.0.0",
 		"dotcom-tool-kit": "^3.5.2",
-		"eslint": "^8.21.0",
+		"eslint": "^9.13.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-yml": "^1.1.0",
