@@ -18,18 +18,18 @@
 		}
 	},
 	"devDependencies": {
-		"@dotcom-tool-kit/circleci": "^6.0.1",
-		"@dotcom-tool-kit/circleci-npm": "^5.3.5",
-		"@dotcom-tool-kit/eslint": "^3.2.0",
-		"@dotcom-tool-kit/mocha": "^3.2.1",
-		"@dotcom-tool-kit/npm": "^3.3.2",
-		"@dotcom-tool-kit/prettier": "^3.2.1",
+		"@dotcom-tool-kit/circleci": "^7.6.1",
+		"@dotcom-tool-kit/circleci-npm": "^6.1.12",
+		"@dotcom-tool-kit/eslint": "^4.3.1",
+		"@dotcom-tool-kit/mocha": "^4.4.1",
+		"@dotcom-tool-kit/npm": "^4.2.11",
+		"@dotcom-tool-kit/prettier": "^4.3.1",
 		"@financial-times/eslint-config-next": "^4.0.0",
 		"@financial-times/secret-squirrel": "^2.21.0",
 		"chai": "^4.1.0",
 		"check-engine": "^1.14.0",
 		"coveralls": "^3.0.0",
-		"dotcom-tool-kit": "^3.5.2",
+		"dotcom-tool-kit": "^4.7.0",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-json": "^3.1.0",
@@ -41,8 +41,11 @@
 		"sinon": "^5.0.0"
 	},
 	"engines": {
-		"node": "18.x || 20.x || 22.x",
-		"npm": "9.x || 10.x"
+		"node": "20.x || 22.x",
+		"npm": "10.x"
+	},
+	"volta": {
+		"node": "22.14.0"
 	},
 	"scripts": {
 		"prepare": "husky install",
@@ -56,8 +59,5 @@
 		"prepush": "npm run test",
 		"format": "dotcom-tool-kit format:local",
 		"coverage": "nyc --reporter=lcovonly mocha --config=.mocharc.json"
-	},
-	"volta": {
-		"node": "18.20.2"
 	}
 }
