@@ -23,6 +23,17 @@ export ES_AWS_ACCESS_KEY=123
 export ES_AWS_SECRET_ACCESS_KEY=456
 ```
 
+Add the following to your package.json to enforce secure versions of node-fetch in signed-aws-es-fetch
+```json
+"overrides": {
+		"@financial-times/n-es-client": {
+			"signed-aws-es-fetch": {
+				"node-fetch": "^2.6.1"
+			}
+		}
+	},
+```
+
 ### Doppler compatibility
 
 Set your secret name as `ES_AWS_ACCESS_KEY_ID` for the AWS ACCESS KEY, and this library will write its value to `ES_AWS_ACCESS_KEY` so that `signed-aws-es-fetch` accepts it
