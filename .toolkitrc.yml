@@ -5,7 +5,7 @@ plugins:
   - '@dotcom-tool-kit/mocha'
   - '@dotcom-tool-kit/eslint'
   - '@dotcom-tool-kit/prettier'
-hooks:
+commands:
   test:local:
     - Eslint
     - Mocha
@@ -13,12 +13,16 @@ hooks:
     - Eslint
     - Mocha
 options:
-  '@dotcom-tool-kit/mocha':
-    configPath: '.mocharc.json'
-    files: 'test/**/*-spec.js'
-  '@dotcom-tool-kit/eslint':
-    files: '**/*.{js,yml,json}'
-  '@dotcom-tool-kit/prettier':
-    files: '**/*.{js,yml,json}'
-  '@dotcom-tool-kit/circleci':
-    nodeVersion: 18.16-browsers
+  plugins:
+    '@dotcom-tool-kit/circleci':
+      cimgNodeVersions:
+        - '20.19'
+        - '22.14'
+  tasks:
+    '@dotcom-tool-kit/mocha':
+      configPath: '.mocharc.json'
+      files: 'test/**/*-spec.js'
+    '@dotcom-tool-kit/eslint':
+      files: '**/*.{js,yml,json}'
+    '@dotcom-tool-kit/prettier':
+      files: '**/*.{js,yml,json}'
